@@ -11,9 +11,9 @@
 	<input type="hidden" name="attr_template" value="@{whisper} &{template:wfrp4} {{name=@{character_name}}}">
 
 	<!-- TOGGLES -->
-	<input type="checkbox" name="attr_ShowAllTabs" id="sheet-showalltabs" class="sheet-toggle sheet-toggle-1 sheet-tabAll" value="1" /><span></span><label for="sheet-showalltabs" data-i18n="show-all-tabs">ShowAllTabs</label>
-	<input type="checkbox" name="attr_AskModifier" id="sheet-askmodifier" class="sheet-toggle sheet-toggle-2" value="1" /><span></span><label for="sheet-askmodifier" data-i18n="ask-modifier">AskModifier</label>
-	<input type="checkbox" name="attr_WhisperToGM" id="sheet-whispertogm" class="sheet-toggle sheet-toggle-3" value="1" /><span></span><label for="sheet-whispertogm" data-i18n="whisper-to-gm">WhisperToGM</label>
+	<input type="checkbox" name="attr_ShowAllTabs" id="sheet-showalltabs" class="sheet-toggle sheet-toggle-1 sheet-tabAll" value="1" /><span></span><label for="sheet-showalltabs" class="sheet-has-title" data-i18n="show-all-tabs" data-i18n-title="show-all-tabs-desc">Show All Tabs</label>
+	<input type="checkbox" name="attr_AskModifier" id="sheet-askmodifier" class="sheet-toggle sheet-toggle-2" value="1" /><span></span><label for="sheet-askmodifier" class="sheet-has-title" data-i18n="ask-modifier" data-i18n-title="ask-modifier-desc">Ask Modifier</label>
+	<input type="checkbox" name="attr_WhisperToGM" id="sheet-whispertogm" class="sheet-toggle sheet-toggle-3" value="1" /><span></span><label for="sheet-whispertogm" class="sheet-has-title" data-i18n="whisper-to-gm" data-i18n-title="whisper-to-gm-desc">Whisper to GM</label>
 
 	<!--- LOGO ---->
 	<div class="sheet-col sheet-logo"><img src="https://raw.githubusercontent.com/zedafty/wfrp4/master/images/logo.png" /></div>
@@ -82,16 +82,16 @@
 						</tr>
 						<tr>
 							<th style="width: 20%;"></th>
-							<th style="width: 8%;"><button type="roll" name="roll_WS" value="@{template} {{title=Weapon Skill}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_WS}]]}}"><span data-i18n="WS">WS</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_BS" value="@{template} {{title=Ballistic Skill}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_BS}]]}}"><span data-i18n="BS">BS</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_S" value="@{template} {{title=Strength}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_S}]]}}"><span data-i18n="S">S</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_T" value="@{template} {{title=Toughness}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_T}]]}}"><span data-i18n="T">T</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_I" value="@{template} {{title=Initiative}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_I}]]}}"><span data-i18n="I">I</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_Ag" value="@{template} {{title=Agility}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_Ag}]]}}"><span data-i18n="Ag">Ag</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_Dex" value="@{template} {{title=Dexterity}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_Dex}]]}}"><span data-i18n="Dex">Dex</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_Int" value="@{template} {{title=Intelligence}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_Int}]]}}"><span data-i18n="Int">Int</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_WP" value="@{template} {{title=Willpower}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_WP}]]}}"><span data-i18n="WP">WP</span></button></th>
-							<th style="width: 8%;"><button type="roll" name="roll_Fel" value="@{template} {{title=Fellowship}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_FEL}]]}}"><span data-i18n="Fel">Fel</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_WS" value="@{template} {{title=^{Weapon-Skill}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_WS}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Weapon-Skill"><span data-i18n="WS">WS</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_BS" value="@{template} {{title=^{Ballistic-Skill}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_BS}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Ballistic-Skill"><span data-i18n="BS">BS</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_S" value="@{template} {{title=^{Strength}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_S}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Strength"><span data-i18n="S">S</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_T" value="@{template} {{title=^{Toughness}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_T}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Toughness"><span data-i18n="T">T</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_I" value="@{template} {{title=^{Initiative}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_I}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Initiative"><span data-i18n="I">I</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_Ag" value="@{template} {{title=^{Agility}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_Ag}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Agility"><span data-i18n="Ag">Ag</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_Dex" value="@{template} {{title=^{Dexterity}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_Dex}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Dexterity"><span data-i18n="Dex">Dex</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_Int" value="@{template} {{title=^{Intelligence}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_Int}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Intelligence"><span data-i18n="Int">Int</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_WP" value="@{template} {{title=^{Willpower}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_WP}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Willpower"><span data-i18n="WP">WP</span></button></th>
+							<th style="width: 8%;"><button type="roll" name="roll_Fel" value="@{template} {{title=^{Fellowship}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_FEL}]]}} {{modifier=[[@{modifier}]]}}" class="sheet-has-title" data-i18n-title="Fellowship"><span data-i18n="Fel">Fel</span></button></th>
 						</tr>
 						<tr>
 							<td><label data-i18n="Career">Career</label></td>
@@ -295,11 +295,11 @@
 							<th colspan="6"><h4 data-i18n="MOVEMENT">MOVEMENT</h4></th>
 						</tr>
 						<tr>
-							<td style="width: 26%"><label class="sheet-center data-i18n="Movement">Movement</label></td>
+							<td style="width: 26%"><label class="sheet-center" data-i18n="Movement">Movement</label></td>
 							<td style="width: 10%"><input type="number" name="attr_character_Movement" value="0" /></td>
-							<td style="width: 22%"><label class="sheet-center data-i18n="Walk">Walk</label></td>
+							<td style="width: 22%"><label class="sheet-center" data-i18n="Walk">Walk</label></td>
 							<td style="width: 10%"><input type="number" name="attr_character_MovementWalk" value="0" /></td>
-							<td style="width: 22%"><label class="sheet-center data-i18n="Run">Run</label></td>
+							<td style="width: 22%"><label class="sheet-center" data-i18n="Run">Run</label></td>
 							<td style="width: 10%"><input type="number" name="attr_character_MovementRun" value="0" /></td>
 						</tr>
 					</table>
@@ -315,7 +315,7 @@
 							<th style="width: 15%"><label data-i18n="Armour">Armour</label></th>
 							<th style="width: 15%"><label data-i18n="Trappings">Trappings</label></th>
 							<th style="width: 15%"><label data-i18n="Total">Total</label></th>
-							<th style="width: 20%"><label data-i18n="Mod">Mod</label></th>
+							<th style="width: 20%"><label data-i18n="Mod.">Mod.</label></th>
 							<th style="width: 20%"><label data-i18n="Max-Enc">Max Enc.</label></th>
 						</tr>
 						<tr>
@@ -342,9 +342,9 @@
 							<td style="width: 10%">
 							<td style="width: 50%">
 								<select name="attr_combat_iniative_template">
-									<option value="@{template} {{title=Initiative}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Current_I}]]}}" data-i18n="I Test /No Tracker/">I Test (No Tracker)</option>
-									<option value="@{template} {{title=Initiative}} {{initiativeTest=[[@{modifier}1d10 + @{character_combatiniative_modifier} + @{Current_IB} &{tracker}]]}} {{initiativeTestInitiativeBonus=[[@{Current_IB}]]}} {{initiativeTestTalents=[[@{character_combatiniative_modifier}]]}}" data-i18n="I Bonus">I Bonus</option>
-									<option value="@{template} {{title=Initiative}} {{initiativeTest=[[@{modifier}1d10 + @{character_combatiniative_modifier} + @{Current_IB} + @{Current_AgB} &{tracker}]]}} {{initiativeTestInitiativeBonus=[[@{Current_IB}]]}} {{initiativeTestAgilityBonus=[[@{Current_AgB}]]}} {{initiativeTestTalents=[[@{character_combatiniative_modifier}]]}}" selected data-i18n="I+Ag Bonus">I+Ag Bonus</option>
+									<option value="@{template} {{title=^{Initiative}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Current_I}]]}} {{modifier=[[@{modifier}]]}}" data-i18n="I Test /No Tracker/">I Test (No Tracker)</option>
+									<option value="@{template} {{title=^{Initiative}}} {{initiativeTest=[[@{modifier}+1d10 + @{character_combatiniative_modifier} + @{Current_IB} &{tracker}]]}} {{initiativeTestInitiativeBonus=[[@{Current_IB}]]}} {{initiativeTestTalents=[[@{character_combatiniative_modifier}]]}} {{modifier=[[@{modifier}]]}}" data-i18n="I Bonus">I Bonus</option>
+									<option value="@{template} {{title=^{Initiative}}} {{initiativeTest=[[@{modifier}+1d10 + @{character_combatiniative_modifier} + @{Current_IB} + @{Current_AgB} &{tracker}]]}} {{initiativeTestInitiativeBonus=[[@{Current_IB}]]}} {{initiativeTestAgilityBonus=[[@{Current_AgB}]]}} {{initiativeTestTalents=[[@{character_combatiniative_modifier}]]}} {{modifier=[[@{modifier}]]}}" selected data-i18n="I+Ag Bonus">I+Ag Bonus</option>
 								</select>
 							</td>
 							<td style="width: 10%"><input type="number" name="attr_character_combatiniative_modifier" value="0" /></td>
@@ -362,26 +362,26 @@
 						<tr>
 							<td>
 								<select name="attr_Wounds_SB_Opt">
-									<option data-i18n="SBx3" value="@{Current_SB}*3">SBx3</option>
-									<option data-i18n="SBx2" value="@{Current_SB}*2">SBx2</option>
+									<option data-i18n="SBx3" value="@{Current_SB}*3">SB×3</option>
+									<option data-i18n="SBx2" value="@{Current_SB}*2">SB×2</option>
 									<option data-i18n="SB" value="@{Current_SB}" selected>SB</option>
-									<option value="0"><b>-</b></option>
+									<option value="0">—</option>
 								</select>
 							</td>
 							<td>
 								<select name="attr_Wounds_TB_Opt">
-									<option data-i18n="TBx3" value="@{Current_TB}*3">TBx3</option>
-									<option data-i18n="TBx2" value="@{Current_TB}*2" selected>TBx2</option>
+									<option data-i18n="TBx3" value="@{Current_TB}*3">TB×3</option>
+									<option data-i18n="TBx2" value="@{Current_TB}*2" selected>TB×2</option>
 									<option data-i18n="TB" value="@{Current_TB}">TB</option>
-									<option value="0"><b>-</b></option>
+									<option value="0">—</option>
 								</select>
 							</td>
 							<td>
 								<select name="attr_Wounds_WPB_Opt">
-									<option data-i18n="WPBx3" value="@{Current_WPB}*3">WPBx3</option>
-									<option data-i18n="WPBx2" value="@{Current_WPB}*2">WPBx2</option>
+									<option data-i18n="WPBx3" value="@{Current_WPB}*3">WPB×3</option>
+									<option data-i18n="WPBx2" value="@{Current_WPB}*2">WPB×2</option>
 									<option data-i18n="WPB" value="@{Current_WPB}" selected>WPB</option>
-									<option value="0"><b>-</b></option>
+									<option value="0">—</option>
 								</select>
 							</td>
 							<td><!-- Hardy Option -->
@@ -410,7 +410,7 @@
 									<option type="hidden" value="floor(((@{Wounds_SB}+@{Wounds_TB}+@{Wounds_WPB})*8)+@{Wounds_Mod}+@{Wounds_Hardy})" data-i18n="Monstrous"><b>Monstrous</b></option>
 								</select>
 							</td>
-							<th><label data-i18n="Mod">Mod</label></th>
+							<th><label data-i18n="Mod.">Mod.</label></th>
 							<th><label data-i18n="Current">Current</label></th>
 							<th><label data-i18n="Maximum">Maximum</label></th>
 						</tr>
@@ -513,7 +513,7 @@
 							<td><input type="number" name="attr_Art_adv" value="0" /></td>
 							<td><input type="number" name="attr_Art_mod" value="0" /></td>
 							<td><input type="number" name="attr_Art" value="floor(@{Art_char}+@{Art_adv}+@{Art_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Art" value="@{template} {{title=Art}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Art}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Art" value="@{template} {{title=^{Art}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Art}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Athletics Skill -->
 						<tr data-i18n-list-item="athletics">
@@ -536,7 +536,7 @@
 							<td><input type="number" name="attr_Athletics_adv" value="0" /></td>
 							<td><input type="number" name="attr_Athletics_mod" value="0" /></td>
 							<td><input type="number" name="attr_Athletics" value="floor(@{Athletics_char}+@{Athletics_adv}+@{Athletics_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Athletics" value="@{template} {{title=Athletics}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Athletics}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Athletics" value="@{template} {{title=^{Athletics}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Athletics}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Bribery Skill -->
 						<tr data-i18n-list-item="bribery">
@@ -559,7 +559,7 @@
 							<td><input type="number" name="attr_Bribery_adv" value="0" /></td>
 							<td><input type="number" name="attr_Bribery_mod" value="0" /></td>
 							<td><input type="number" name="attr_Bribery" value="floor(@{Bribery_char}+@{Bribery_adv}+@{Bribery_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Bribery" value="@{template} {{title=Bribery}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Bribery}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Bribery" value="@{template} {{title=^{Bribery}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Bribery}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Charm Skill -->
 						<tr data-i18n-list-item="charm">
@@ -582,7 +582,7 @@
 							<td><input type="number" name="attr_Charm_adv" value="0" /></td>
 							<td><input type="number" name="attr_Charm_mod" value="0" /></td>
 							<td><input type="number" name="attr_Charm" value="floor(@{Charm_char}+@{Charm_adv}+@{Charm_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Charm" value="@{template} {{title=Charm}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Charm}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Charm" value="@{template} {{title=^{Charm}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Charm}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Charm Animal Skill -->
 						<tr data-i18n-list-item="charm-animal">
@@ -605,7 +605,7 @@
 							<td><input type="number" name="attr_CharmAnimal_adv" value="0" /></td>
 							<td><input type="number" name="attr_CharmAnimal_mod" value="0" /></td>
 							<td><input type="number" name="attr_CharmAnimal" value="floor(@{CharmAnimal_char}+@{CharmAnimal_adv}+@{CharmAnimal_mod})" disabled /></td>
-							<td><button type="roll" name="roll_CharmAnimal" value="@{template} {{title=Charm Animal}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{CharmAnimal}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_CharmAnimal" value="@{template} {{title=^{Charm-Animal}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{CharmAnimal}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Climb Skill -->
 						<tr data-i18n-list-item="climb">
@@ -628,7 +628,7 @@
 							<td><input type="number" name="attr_Climb_adv" value="0" /></td>
 							<td><input type="number" name="attr_Climb_mod" value="0" /></td>
 							<td><input type="number" name="attr_Climb" value="floor(@{Climb_char}+@{Climb_adv}+@{Climb_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Climb" value="@{template} {{title=Climb}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Climb}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Climb" value="@{template} {{title=^{Climb}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Climb}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Cool Skill -->
 						<tr data-i18n-list-item="cool">
@@ -651,7 +651,7 @@
 							<td><input type="number" name="attr_Cool_adv" value="0" /></td>
 							<td><input type="number" name="attr_Cool_mod" value="0" /></td>
 							<td><input type="number" name="attr_Cool" value="floor(@{Cool_char}+@{Cool_adv}+@{Cool_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Cool" value="@{template} {{title=Cool}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Cool}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Cool" value="@{template} {{title=^{Cool}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Cool}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Consume Alcohol Skill -->
 						<tr data-i18n-list-item="consume-alcohol">
@@ -674,7 +674,7 @@
 							<td><input type="number" name="attr_ConsumeAlcohol_adv" value="0" /></td>
 							<td><input type="number" name="attr_ConsumeAlcohol_mod" value="0" /></td>
 							<td><input type="number" name="attr_ConsumeAlcohol" value="floor(@{ConsumeAlcohol_char}+@{ConsumeAlcohol_adv}+@{ConsumeAlcohol_mod})" disabled /></td>
-							<td><button type="roll" name="roll_ConsumeAlcohol" value="@{template} {{title=Consume Alcohol}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{ConsumeAlcohol}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_ConsumeAlcohol" value="@{template} {{title=^{Consume Alcohol}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{ConsumeAlcohol}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Dodge Skill -->
 						<tr data-i18n-list-item="dodge">
@@ -697,7 +697,7 @@
 							<td><input type="number" name="attr_Dodge_adv" value="0" /></td>
 							<td><input type="number" name="attr_Dodge_mod" value="0" /></td>
 							<td><input type="number" name="attr_Dodge" value="floor(@{Dodge_char}+@{Dodge_adv}+@{Dodge_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Dodge" value="@{template} {{title=Dodge}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Dodge}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Dodge" value="@{template} {{title=^{Dodge}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Dodge}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Drive Skill -->
 						<tr data-i18n-list-item="drive">
@@ -720,7 +720,7 @@
 							<td><input type="number" name="attr_Drive_adv" value="0" /></td>
 							<td><input type="number" name="attr_Drive_mod" value="0" /></td>
 							<td><input type="number" name="attr_Drive" value="floor(@{Drive_char}+@{Drive_adv}+@{Drive_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Drive" value="@{template} {{title=Drive}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Drive}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Drive" value="@{template} {{title=^{Drive}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Drive}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Endurance Skill -->
 						<tr data-i18n-list-item="endurance">
@@ -743,7 +743,7 @@
 							<td><input type="number" name="attr_Endurance_adv" value="0" /></td>
 							<td><input type="number" name="attr_Endurance_mod" value="0" /></td>
 							<td><input type="number" name="attr_Endurance" value="floor(@{Endurance_char}+@{Endurance_adv}+@{Endurance_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Endurance" value="@{template} {{title=Endurance}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Endurance}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Endurance" value="@{template} {{title=^{Endurance}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Endurance}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Entertain Skill -->
 						<tr data-i18n-list-item="entertain">
@@ -766,7 +766,7 @@
 							<td><input type="number" name="attr_Entertain_adv" value="0" /></td>
 							<td><input type="number" name="attr_Entertain_mod" value="0" /></td>
 							<td><input type="number" name="attr_Entertain" value="floor(@{Entertain_char}+@{Entertain_adv}+@{Entertain_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Entertain" value="@{template} {{title=Entertain}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Entertain}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Entertain" value="@{template} {{title=^{Entertain}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Entertain}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Gamble Skill -->
 						<tr data-i18n-list-item="gamble">
@@ -789,7 +789,7 @@
 							<td><input type="number" name="attr_Gamble_adv" value="0" /></td>
 							<td><input type="number" name="attr_Gamble_mod" value="0" /></td>
 							<td><input type="number" name="attr_Gamble" value="floor(@{Gamble_char}+@{Gamble_adv}+@{Gamble_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Gamble" value="@{template} {{title=Gamble}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Gamble}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Gamble" value="@{template} {{title=^{Gamble}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Gamble}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Gossip Skill -->
 						<tr data-i18n-list-item="gossip">
@@ -812,7 +812,7 @@
 							<td><input type="number" name="attr_Gossip_adv" value="0" /></td>
 							<td><input type="number" name="attr_Gossip_mod" value="0" /></td>
 							<td><input type="number" name="attr_Gossip" value="floor(@{Gossip_char}+@{Gossip_adv}+@{Gossip_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Gossip" value="@{template} {{title=Gossip}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Gossip}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Gossip" value="@{template} {{title=^{Gossip}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Gossip}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Haggle Skill -->
 						<tr data-i18n-list-item="haggle">
@@ -835,7 +835,7 @@
 							<td><input type="number" name="attr_Haggle_adv" value="0" /></td>
 							<td><input type="number" name="attr_Haggle_mod" value="0" /></td>
 							<td><input type="number" name="attr_Haggle" value="floor(@{Haggle_char}+@{Haggle_adv}+@{Haggle_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Haggle" value="@{template} {{title=Haggle}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Haggle}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Haggle" value="@{template} {{title=^{Haggle}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Haggle}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Intimidate Skill -->
 						<tr data-i18n-list-item="intimidate">
@@ -858,7 +858,7 @@
 							<td><input type="number" name="attr_Intimidate_adv" value="0" /></td>
 							<td><input type="number" name="attr_Intimidate_mod" value="0" /></td>
 							<td><input type="number" name="attr_Intimidate" value="floor(@{Intimidate_char}+@{Intimidate_adv}+@{Intimidate_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Intimidate" value="@{template} {{title=Intimidate}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Intimidate}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Intimidate" value="@{template} {{title=^{Intimidate}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Intimidate}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Intuition Skill -->
 						<tr data-i18n-list-item="intuition">
@@ -881,7 +881,7 @@
 							<td><input type="number" name="attr_Intuition_adv" value="0" /></td>
 							<td><input type="number" name="attr_Intuition_mod" value="0" /></td>
 							<td><input type="number" name="attr_Intuition" value="floor(@{Intuition_char}+@{Intuition_adv}+@{Intuition_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Intuition" value="@{template} {{title=Intuition}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Intuition}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Intuition" value="@{template} {{title=^{Intuition}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Intuition}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Leadership Skill -->
 						<tr data-i18n-list-item="leadership">
@@ -904,7 +904,7 @@
 							<td><input type="number" name="attr_Leadership_adv" value="0" /></td>
 							<td><input type="number" name="attr_Leadership_mod" value="0" /></td>
 							<td><input type="number" name="attr_Leadership" value="floor(@{Leadership_char}+@{Leadership_adv}+@{Leadership_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Leadership" value="@{template} {{title=Leadership}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Leadership}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Leadership" value="@{template} {{title=^{Leadership}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Leadership}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Navigation Skill -->
 						<tr data-i18n-list-item="navigation">
@@ -927,7 +927,7 @@
 							<td><input type="number" name="attr_Navigation_adv" value="0" /></td>
 							<td><input type="number" name="attr_Navigation_mod" value="0" /></td>
 							<td><input type="number" name="attr_Navigation" value="floor(@{Navigation_char}+@{Navigation_adv}+@{Navigation_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Navigation" value="@{template} {{title=Navigation}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Navigation}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Navigation" value="@{template} {{title=^{Navigation}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Navigation}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Outdoor Survival Skill -->
 						<tr data-i18n-list-item="outdoor-survival">
@@ -950,7 +950,7 @@
 							<td><input type="number" name="attr_OutdoorSurvival_adv" value="0" /></td>
 							<td><input type="number" name="attr_OutdoorSurvival_mod" value="0" /></td>
 							<td><input type="number" name="attr_OutdoorSurvival" value="floor(@{OutdoorSurvival_char}+@{OutdoorSurvival_adv}+@{OutdoorSurvival_mod})" disabled /></td>
-							<td><button type="roll" name="roll_OutdoorSurvival" value="@{template} {{title=Outdoor Survival}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{OutdoorSurvival}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_OutdoorSurvival" value="@{template} {{title=^{Outdoor-Survival}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{OutdoorSurvival}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Perception Skill -->
 						<tr data-i18n-list-item="perception">
@@ -973,7 +973,7 @@
 							<td><input type="number" name="attr_Perception_adv" value="0" /></td>
 							<td><input type="number" name="attr_Perception_mod" value="0" /></td>
 							<td><input type="number" name="attr_Perception" value="floor(@{Perception_char}+@{Perception_adv}+@{Perception_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Perception" value="@{template} {{title=Perception}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Perception}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Perception" value="@{template} {{title=^{Perception}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Perception}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Ride Skill -->
 						<tr data-i18n-list-item="ride">
@@ -996,7 +996,7 @@
 							<td><input type="number" name="attr_Ride_adv" value="0" /></td>
 							<td><input type="number" name="attr_Ride_mod" value="0" /></td>
 							<td><input type="number" name="attr_Ride" value="floor(@{Ride_char}+@{Ride_adv}+@{Ride_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Ride" value="@{template} {{title=Ride}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Ride}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Ride" value="@{template} {{title=^{Ride}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Ride}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Row Skill -->
 						<tr data-i18n-list-item="row">
@@ -1019,7 +1019,7 @@
 							<td><input type="number" name="attr_Row_adv" value="0" /></td>
 							<td><input type="number" name="attr_Row_mod" value="0" /></td>
 							<td><input type="number" name="attr_Row" value="floor(@{Row_char}+@{Row_adv}+@{Row_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Row" value="@{template} {{title=Row}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Row}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Row" value="@{template} {{title=^{Row}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Row}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Stealth Skill -->
 						<tr data-i18n-list-item="stealth">
@@ -1042,7 +1042,7 @@
 							<td><input type="number" name="attr_Stealth_adv" value="0" /></td>
 							<td><input type="number" name="attr_Stealth_mod" value="0" /></td>
 							<td><input type="number" name="attr_Stealth" value="floor(@{Stealth_char}+@{Stealth_adv}+@{Stealth_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Stealth" value="@{template} {{title=Stealth}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Stealth}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Stealth" value="@{template} {{title=^{Stealth}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Stealth}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 					</table>
 				</div>
@@ -1086,7 +1086,7 @@
 							<td><input type="number" name="attr_MeleeBasic_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeBasic_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeBasic" value="floor(@{MeleeBasic_char}+@{MeleeBasic_adv}+@{MeleeBasic_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeBasic" value="@{template} {{title=Melee (Basic)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeBasic}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeBasic" value="@{template} {{title=^{Melee-i-Basic}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeBasic}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Brawling) -->
 						<tr data-i18n-list-item="melee-brawling">
@@ -1109,7 +1109,7 @@
 							<td><input type="number" name="attr_MeleeBrawling_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeBrawling_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeBrawling" value="floor(@{MeleeBrawling_char}+@{MeleeBrawling_adv}+@{MeleeBrawling_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeBrawling" value="@{template} {{title=Melee (Brawling)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeBrawling}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeBrawling" value="@{template} {{title=^{Melee-i-Brawling}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeBrawling}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Cavalry) -->
 						<tr data-i18n-list-item="melee-cavalry">
@@ -1132,7 +1132,7 @@
 							<td><input type="number" name="attr_MeleeCavalry_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeCavalry_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeCavalry" value="floor(@{MeleeCavalry_char}+@{MeleeCavalry_adv}+@{MeleeCavalry_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeCavalry" value="@{template} {{title=Melee (Cavalry)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeCavalry}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeCavalry" value="@{template} {{title=^{Melee-i-Cavalry}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeCavalry}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Fencing) -->
 						<tr data-i18n-list-item="melee-fencing">
@@ -1155,7 +1155,7 @@
 							<td><input type="number" name="attr_MeleeFencing_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeFencing_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeFencing" value="floor(@{MeleeFencing_char}+@{MeleeFencing_adv}+@{MeleeFencing_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeFencing" value="@{template} {{title=Melee (Fencing)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeFencing}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeFencing" value="@{template} {{title=^{Melee-i-Fencing}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeFencing}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Flail) -->
 						<tr data-i18n-list-item="melee-flail">
@@ -1178,7 +1178,7 @@
 							<td><input type="number" name="attr_MeleeFlail_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeFlail_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeFlail" value="floor(@{MeleeFlail_char}+@{MeleeFlail_adv}+@{MeleeFlail_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeFlail" value="@{template} {{title=Melee (Flail)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeFlail}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeFlail" value="@{template} {{title=^{Melee-i-Flail}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeFlail}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Parry) -->
 						<tr data-i18n-list-item="melee-parry">
@@ -1201,7 +1201,7 @@
 							<td><input type="number" name="attr_MeleeParry_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeParry_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeParry" value="floor(@{MeleeParry_char}+@{MeleeParry_adv}+@{MeleeParry_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeParry" value="@{template} {{title=Melee (Parry)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeParry}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeParry" value="@{template} {{title=^{Melee-i-Parry}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeParry}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Pole-Arm) -->
 						<tr data-i18n-list-item="melee-pole-arm">
@@ -1224,7 +1224,7 @@
 							<td><input type="number" name="attr_MeleePoleArm_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleePoleArm_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleePoleArm" value="floor(@{MeleePoleArm_char}+@{MeleePoleArm_adv}+@{MeleePoleArm_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleePoleArm" value="@{template} {{title=Melee (Pole-Arm)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleePoleArm}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleePoleArm" value="@{template} {{title=^{Melee-i-Pole-Arm}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleePoleArm}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Melee (Two-Handed) -->
 						<tr data-i18n-list-item="melee-two-handed">
@@ -1247,7 +1247,7 @@
 							<td><input type="number" name="attr_MeleeTwoHanded_adv" value="0" /></td>
 							<td><input type="number" name="attr_MeleeTwoHanded_mod" value="0" /></td>
 							<td><input type="number" name="attr_MeleeTwoHanded" value="floor(@{MeleeTwoHanded_char}+@{MeleeTwoHanded_adv}+@{MeleeTwoHanded_mod})" disabled /></td>
-							<td><button type="roll" name="roll_MeleeTwoHanded" value="@{template} {{title=Melee (Two-Handed)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{MeleeTwoHanded}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_MeleeTwoHanded" value="@{template} {{title=^{Melee-i-2H}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{MeleeTwoHanded}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- RANGED SPECIALIZATIONS (ADVANCED) -->
 						<tr data-i18n-list-item="ranged-header">
@@ -1283,7 +1283,7 @@
 							<td><input type="number" name="attr_RangedBlackpowder_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedBlackpowder_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedBlackpowder" value="floor(@{RangedBlackpowder_char}+@{RangedBlackpowder_adv}+@{RangedBlackpowder_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedBlackpowder" value="@{template} {{title=Ranged (Blackpowder)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedBlackpowder}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedBlackpowder" value="@{template} {{title=^{Ranged-i-Blackpowder}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedBlackpowder}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Bow) -->
 						<tr data-i18n-list-item="ranged-bow">
@@ -1306,7 +1306,7 @@
 							<td><input type="number" name="attr_RangedBow_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedBow_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedBow" value="floor(@{RangedBow_char}+@{RangedBow_adv}+@{RangedBow_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedBow" value="@{template} {{title=Ranged (Bow)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedBow}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedBow" value="@{template} {{title=^{Ranged-i-Bow}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedBow}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Crossbow) -->
 						<tr data-i18n-list-item="ranged-crossbow">
@@ -1329,7 +1329,7 @@
 							<td><input type="number" name="attr_RangedCrossBow_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedCrossBow_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedCrossBow" value="floor(@{RangedCrossBow_char}+@{RangedCrossBow_adv}+@{RangedCrossBow_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedCrossBow" value="@{template} {{title=Ranged (Crossbow)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedCrossBow}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedCrossBow" value="@{template} {{title=^{Ranged-i-Crossbow}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedCrossBow}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Engineering) -->
 						<tr data-i18n-list-item="ranged-engineering">
@@ -1352,7 +1352,7 @@
 							<td><input type="number" name="attr_RangedEngineering_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedEngineering_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedEngineering" value="floor(@{RangedEngineering_char}+@{RangedEngineering_adv}+@{RangedEngineering_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedEngineering" value="@{template} {{title=Ranged (Engineering)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedEngineering}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedEngineering" value="@{template} {{title=^{Ranged-i-Engineering}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedEngineering}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Entangling) -->
 						<tr data-i18n-list-item="ranged-entangling">
@@ -1375,7 +1375,7 @@
 							<td><input type="number" name="attr_RangedEntangling_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedEntangling_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedEntangling" value="floor(@{RangedEntangling_char}+@{RangedEntangling_adv}+@{RangedEntangling_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedEntangling" value="@{template} {{title=Ranged (Entangling)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedEntangling}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedEntangling" value="@{template} {{title=^{Ranged-i-Entangling}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedEntangling}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Explosives) -->
 						<tr data-i18n-list-item="ranged-explosives">
@@ -1398,7 +1398,7 @@
 							<td><input type="number" name="attr_RangedExplosives_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedExplosives_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedExplosives" value="floor(@{RangedExplosives_char}+@{RangedExplosives_adv}+@{RangedExplosives_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedExplosives" value="@{template} {{title=Ranged (Explosives)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedExplosives}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedExplosives" value="@{template} {{title=^{Ranged-i-Explosives}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedExplosives}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Sling) -->
 						<tr data-i18n-list-item="ranged-sling">
@@ -1421,7 +1421,7 @@
 							<td><input type="number" name="attr_RangedSling_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedSling_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedSling" value="floor(@{RangedSling_char}+@{RangedSling_adv}+@{RangedSling_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedSling" value="@{template} {{title=Ranged (Sling)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedSling}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedSling" value="@{template} {{title=^{Ranged-i-Sling}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedSling}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Ranged (Throwing) -->
 						<tr data-i18n-list-item="ranged-throwing">
@@ -1444,7 +1444,7 @@
 							<td><input type="number" name="attr_RangedThrowing_adv" value="0" /></td>
 							<td><input type="number" name="attr_RangedThrowing_mod" value="0" /></td>
 							<td><input type="number" name="attr_RangedThrowing" value="floor(@{RangedThrowing_char}+@{RangedThrowing_adv}+@{RangedThrowing_mod})" disabled /></td>
-							<td><button type="roll" name="roll_RangedThrowing" value="@{template} {{title=Ranged (Throwing)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{RangedThrowing}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_RangedThrowing" value="@{template} {{title=^{Ranged-i-Throwing}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{RangedThrowing}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 					</table>
 					<label class="sheet-small" data-i18n="Magic-Notice">&dagger;= Can be used untrained but loses all Qualities and keeps the Flaws</label>
@@ -1483,7 +1483,7 @@
 							<td><input type="number" name="attr_LanguageMagick_adv" value="0" /></td>
 							<td><input type="number" name="attr_LanguageMagick_mod" value="0" /></td>
 							<td><input type="number" name="attr_LanguageMagick" value="floor(@{LanguageMagick_char}+@{LanguageMagick_adv}+@{LanguageMagick_mod})" disabled /></td>
-							<td><button type="roll" name="roll_LanguageMagick" value="@{template} {{title=Language (Magick)}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{LanguageMagick}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_LanguageMagick" value="@{template} {{title=^{Language-i-Magick-p}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{LanguageMagick}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 						<!-- Skill Pray -->
 						<tr data-i18n-list-item="magic-pray">
@@ -1506,7 +1506,30 @@
 							<td><input type="number" name="attr_Pray_adv" value="0" /></td>
 							<td><input type="number" name="attr_Pray_mod" value="0" /></td>
 							<td><input type="number" name="attr_Pray" value="floor(@{Pray_char}+@{Pray_adv}+@{Pray_mod})" disabled /></td>
-							<td><button type="roll" name="roll_Pray" value="@{template} {{title=Pray}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{Pray}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+							<td><button type="roll" name="roll_Pray" value="@{template} {{title=^{Pray}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Pray}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
+						</tr>
+						<!-- Skill Channelling -->
+						<tr data-i18n-list-item="magic-channelling">
+							<td class="sheet-left" data-i18n="Channelling">Channelling</td>
+							<td><input type="checkbox" name="attr_ChannellingCareerSkill" value="1" /><span></span></td>
+							<td>
+								<select name="attr_Channelling_char">
+									<option value="@{Current_WS}" data-i18n="WS-p">(WS)</option>
+									<option value="@{Current_BS}" data-i18n="BS-p">(BS)</option>
+									<option value="@{Current_S}" data-i18n="S-p">(S)</option>
+									<option value="@{Current_T}" data-i18n="T-p">(T)</option>
+									<option value="@{Current_I}" data-i18n="I-p">(I)</option>
+									<option value="@{Current_Ag}" data-i18n="Ag-p">(Ag)</option>
+									<option value="@{Current_Dex}" data-i18n="Dex-p">(Dex)</option>
+									<option value="@{Current_Int}" data-i18n="Int-p">(Int)</option>
+									<option value="@{Current_WP}" selected data-i18n="WP-p">(WP)</option>
+									<option value="@{Current_Fel}" data-i18n="Fel-p">(Fel)</option>
+								</select>
+							</td>
+							<td><input type="number" name="attr_Channelling_adv" value="0" /></td>
+							<td><input type="number" name="attr_Channelling_mod" value="0" /></td>
+							<td><input type="number" name="attr_Channelling" value="floor(@{Channelling_char}+@{Channelling_adv}+@{Channelling_mod})" disabled /></td>
+							<td><button type="roll" name="roll_Channelling" value="@{template} {{title=^{Channelling}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{Channelling}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></td>
 						</tr>
 					</table>
 				</div>
@@ -1519,8 +1542,8 @@
 						<div class="sheet-table-header"><h4 data-i18n="GROUPED-&-ADVANCED-SKILLS"><label>GROUPED & ADVANCED SKILLS</h4></div>
 						<div class="sheet-row">
 							<div style="width: 40%;"><label data-i18n="Name">Name</label></div>
-							<div style="width: 10%;"></div>
-							<div style="width: 10%;"><label class="sheet-center" data-i18n="Char.">Char.</label></div>
+							<div style="width: 8%;"></div>
+							<div style="width: 12%;"><label class="sheet-center" data-i18n="Char.">Char.</label></div>
 							<div style="width: 10%;"><label class="sheet-center" data-i18n="Adv.">Adv.</label></div>
 							<div style="width: 10%;"><label class="sheet-center" data-i18n="Mod.">Mod.</label></div>
 							<div style="width: 10%;"><label class="sheet-center" data-i18n="Total">Total</label></div>
@@ -1528,9 +1551,9 @@
 						</div>
 						<fieldset class="repeating_advancedskills" name="attr_repeating_advancedskills">
 							<div class="sheet-row">
-								<div style="width: 40%"><input type="text" name="attr_CustomSkillName" placeholder="Skill name" /></div>
-								<div style="width: 10%"><input type="checkbox" name="attr_CustomCareerSkill" value="1" /><span></span></div>
-								<div style="width: 10%">
+								<div style="width: 40%"><input type="text" name="attr_CustomSkillName" placeholder="Skill name…" data-i18n-placeholder="skill-name-pl" /></div>
+								<div style="width: 8%"><input type="checkbox" name="attr_CustomCareerSkill" value="1" /><span></span></div>
+								<div style="width: 12%">
 									<select name="attr_CustomSkill_char">
 										<option value="@{Current_WS}" selected data-i18n="WS-p">(WS)</option>
 										<option value="@{Current_BS}" data-i18n="BS-p">(BS)</option>
@@ -1547,7 +1570,7 @@
 								<div style="width: 10%"><input type="number" name="attr_CustomSkill_adv" class="sheet-center" value="1" /></div>
 								<div style="width: 10%"><input type="number" name="attr_CustomSkill_mod" class="sheet-center" value="0" /></div>
 								<div style="width: 10%"><input type="number" name="attr_CustomSkill" class="sheet-center" value="floor(@{CustomSkill_char}+@{CustomSkill_adv}+@{CustomSkill_mod})" disabled /></div>
-								<div style="width: 10%"><button type="roll" name="roll_CustomSkill" value="@{template} {{title=@{CustomSkillName}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{CustomSkill}]]}}"><span data-i18n="Roll">Roll</span></button></div>
+								<div style="width: 10%"><button type="roll" name="roll_CustomSkill" value="@{template} {{title=@{CustomSkillName}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{CustomSkill}]]}} {{modifier=[[@{modifier}]]}}"><span data-i18n="Roll">Roll</span></button></div>
 							</div>
 						</fieldset>
 					</div>
@@ -1564,13 +1587,13 @@
 				</div>
 				<fieldset class="repeating_talents" name="repeating_talents">
 					<div class="sheet-row">
-						<div style="width: 70%;"><input type="text" name="attr_TalentName" placeholder="Name" /></div>
+						<div style="width: 70%;"><input type="text" name="attr_TalentName" placeholder="Talent name…" data-i18n-placeholder="talent-name-pl" /></div>
 						<div style="width: 10%;"><input type="number" name="attr_TalentNumber" value="1" /></div>
 						<div style="width: 10%;"><button type="roll" name="roll_TalentDisplay" value="@{template} {{title=@{TalentName}}} {{talent=@{TalentName}}} {{talentdescription=@{TalentDesc}}}"><span data-i18n="Show">Show</span></button></div>
 						<div style="width: 10%" class="spacer"></div>
 						<input type="checkbox" name="attr_TalentDescHide" class="sheet-desc sheet-wide" /><span></span>
 						<div style="width: 90%" class="sheet-desc">
-							<textarea name="attr_Talentdesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Talentdesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1593,8 +1616,8 @@
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="R.Leg">R.Leg</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="L.Leg">L.Leg</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Shield">Shield</label></div>
-					<div style="width: 10%;"><label class="sheet-center" data-i18n="AP">AP</label></div>
-					<div style="width: 10%;"><label class="sheet-center" data-i18n="Enc.">Enc.</label></div>
+					<div style="width: 10%;"><label class="sheet-center sheet-has-title" data-i18n="AP" data-i18n-title="Armour-Points">AP</label></div>
+					<div style="width: 10%;"><label class="sheet-center sheet-has-title" data-i18n="Enc." data-i18n-title="Encumbrance">Enc.</label></div>
 					<div style="width: 10%;"></div>
 				</div>
 				<fieldset class="repeating_armor" name="attr_repeating_armor">
@@ -1611,12 +1634,12 @@
 						<div style="width: 10%;"><button type="roll" name="roll_ArmorDisplay" value="@{template} {{title=@{ArmourName}}} {{talentdescription=@{ArmourDesc}}}"><span data-i18n="Show">Show</span></button></div>
 					</div>
 					<div class="sheet-row">
-						<div style="width: 45%;"><input type="text" name="attr_ArmourName" placeholder="Name" /></div>
-						<div style="width: 45%;"><input type="text" name="attr_ArmourQualities" placeholder="Qualities/Flaws" /></div>
+						<div style="width: 45%;"><input type="text" name="attr_ArmourName" placeholder="Armour name…" data-i18n-placeholder="armour-name-pl" /></div>
+						<div style="width: 45%;"><input type="text" name="attr_ArmourQualities" placeholder="Armour qualities and/or flaws…" data-i18n-placeholder="armour-qualities-flaws-pl" /></div>
 						<div style="width: 10%;" class="spacer"></div>
 						<input type="checkbox" name="attr_ArmourDescHide" class="sheet-desc sheet-wide" /><span></span>
 						<div style="width: 90%" class="sheet-desc">
-							<textarea name="attr_Armourdesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Armourdesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1654,7 +1677,7 @@
 					<div class="sheet-left-leg">
 						<span>80-89</span>
 						<input type="number" name="attr_ArmourAPLeftLeg" value="0" readonly />
-						<label class="sheet-center" data-i18n="Leg Left">Left Leg</label>
+						<label class="sheet-center" data-i18n="Left Leg">Left Leg</label>
 					</div>
 					<div class="sheet-shield">
 						<input type="number" name="attr_ArmourAPShield" value="0" readonly />
@@ -1669,15 +1692,15 @@
 				<div class="sheet-row">
 					<div style="width: 25%;"><label data-i18n="Name">Name</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Group">Group</label></div>
-					<div style="width: 5%;"><label class="sheet-center" data-i18n="Enc.">Enc.</label></div>
-					<div style="width: 10%;"><label class="sheet-center" data-i18n="Range/Reach">Range/Reach</label></div>
+					<div style="width: 5%;"><label class="sheet-center sheet-has-title" data-i18n="Enc." data-i18n-title="Encumbrance">Enc.</label></div>
+					<div style="width: 12.5%;"><label class="sheet-center" data-i18n="Range/Reach">Range/Reach</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Damage">Damage</label></div>
-					<div style="width: 25%;"><label data-i18n="Qualities">Qualities</label></div>
+					<div style="width: 22.5%;"><label data-i18n="Qualities/Flaws">Qualities/Flaws</label></div>
 					<div style="width: 15%;" class="sheet-spacer"></div>
 				</div>
 				<fieldset class="repeating_weapons" name="attr_repeating_weapons">
 					<div class="sheet-row">
-						<div style="width: 20%;"><input type="text" name="attr_WeaponName" /></div>
+						<div style="width: 20%;"><input type="text" name="attr_WeaponName" placeholder="Weapon name…" data-i18n-placeholder="weapon-name-pl" /></div>
 						<div style="width: 15%;">
 							<select name="attr_WeaponGroup">
 								<option value="@{MeleeBasic}" selected data-i18n="Melee-Basic">Melee (Basic)</option>
@@ -1700,16 +1723,16 @@
 								<option value="@{Current_BS}" data-i18n="Ballistic-Skill">Ballistic Skill</option>
 							</select>
 						</div>
-						<div style="width: 5%;"><input type="text" name="attr_WeaponEnc" class="sheet-center" /></div>
-						<div style="width: 10%;"><input type="text" name="attr_WeaponRange" class="sheet-center" /></div>
-						<div style="width: 10%;"><input type="text" name="attr_WeaponDamage" class="sheet-center" /></div>
-						<div style="width: 25%;"><input type="text" name="attr_WeaponQualities" /></div>
+						<div style="width: 5%;"><input type="number" name="attr_WeaponEnc" class="sheet-center" value="0" /></div>
+						<div style="width: 12.5%;"><input type="text" name="attr_WeaponRange" class="sheet-center" placeholder="Range/Reach…" data-i18n-placeholder="weapon-range-pl" /></div>
+						<div style="width: 10%;"><input type="text" name="attr_WeaponDamage" class="sheet-center" placeholder="Damage…" data-i18n-placeholder="weapon-damage-pl" /></div>
+						<div style="width: 22.5%;"><input type="text" name="attr_WeaponQualities" placeholder="Weapon qualities and/or flaws…" data-i18n-placeholder="weapon-qualities-flaws-pl" /></div>
 						<div style="width: 5%;"><input type="checkbox" name="attr_WeaponHeld" value="1" checked /><span></span></div>
-						<div style="width: 5%;"><button type="roll" name="roll_WeaponDamage" value="@{template} {{title=@{WeaponName}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{WeaponGroup}]]}} {{weapon=@{WeaponName}}} {{range=@{WeaponRange}}} {{damage=@{WeaponDamage}}} {{qualities=@{WeaponQualities}}} {{description=@{Weapondesc}}} {{hitlocation=1}} ]]"><span>Roll</span></button></div>
+						<div style="width: 5%;"><button type="roll" name="roll_WeaponDamage" value="@{template} {{title=@{WeaponName}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{WeaponGroup}]]}} {{modifier=[[@{modifier}]]}} {{weapon=@{WeaponName}}} {{range=@{WeaponRange}}} {{damage=@{WeaponDamage}}} {{qualities=@{WeaponQualities}}} {{description=@{Weapondesc}}} {{hitlocation=1}} ]]"><span data-i18n="Roll">Roll</span></button></div>
 						<div style="width: 5%;" class="sheet-spacer"></div>
 						<input type="checkbox" name="attr_WeaponDescHide" class="sheet-desc" /><span></span>
 						<div style="width: 95%" class="sheet-desc">
-							<textarea name="attr_Weapondesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Weapondesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1719,16 +1742,15 @@
 			<div class="sheet-col">
 				<h4 data-i18n="SPELLS-AND-PRAYERS">SPELLS AND PRAYERS</h4>
 				<div class="sheet-row sheet-headline" style="width: 50%; margin-left: 25%; margin-right: 25%;">
-					<div style="width: 50%;"><label class="sheet-right" data-i18n="Extended-Channeling-SL">Extended Channelling SL</label></div>
+					<div style="width: 50%;"><label class="sheet-right" data-i18n="Extended-Channelling-SL">Extended Channelling SL</label></div>
 					<div style="width: 7.5%;"><input type="number" name="attr_ExtendedChannellingSl" value="0" /></div>
-					<div style="width: 5%;" class="sheet-spacer"></div>
-					<div style="width: 30%;"><label class="sheet-right" data-i18n="Sin-Points">Sin Points</label></div>
+					<div style="width: 35%;"><label class="sheet-right" data-i18n="Sin-Points">Sin Points</label></div>
 					<div style="width: 7.5%;"><input type="number" name="attr_SinPoints" value="0" /></div>
 				</div>
 				<div class="sheet-row">
 					<div style="width: 20%;"><label data-i18n="Name">Name</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Type">Type</label></div>
-					<div style="width: 5%;"><label class="sheet-center" data-i18n="CN">CN</label></div>
+					<div style="width: 5%;"><label class="sheet-center sheet-has-title" data-i18n="CN" data-i18n-title="Casting-Number">CN</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Range">Range</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Target">Target</label></div>
 					<div style="width: 10%;"><label class="sheet-center" data-i18n="Duration">Duration</label></div>
@@ -1737,39 +1759,39 @@
 				</div>
 				<fieldset class="repeating_spells" name="attr_repeating_spells">
 					<div class="sheet-row">
-						<div style="width: 20%;"><input type="text" name="attr_Spell" /></div>
+						<div style="width: 20%;"><input type="text" name="attr_Spell" placeholder="Spell or prayer name…" data-i18n-placeholder="spell-name-pl" /></div>
 						<div style="width: 10%;">
 							<select name="attr_SpellType">
-								<option value="@{LanguageMagick}" selected><label data-i18n="Arcane">Arcane</label></option>
-								<option value="@{Pray}"><label data-i18n="Divine">Divine</label></option>
+								<option value="@{LanguageMagick}" data-i18n="Arcane" selected>Arcane</option>
+								<option value="@{Pray}" data-i18n="Divine">Divine</option>
 							</select>
 						</div>
-						<div style="width: 5%;"><input type="text" name="attr_SpellCN" class="sheet-center" /></div>
+						<div style="width: 5%;"><input type="number" name="attr_SpellCN" class="sheet-center" value="0" /></div>
 						<div style="width: 10%;">
 							<select name="attr_SpellRange">
-								<option value="[[@{Current_WP}]] Yards" selected><label data-i18n="Willpower-Yards">Willpower Yards</label></option>
-								<option value="[[@{Current_WPB}]] Yards"><label data-i18n="Willpower-Bonus-Yards">Willpower Bonus Yards</label></option>
-								<option value="[[@{Current_WPB}]] Miles"><label data-i18n="Willpower-Bonus-Miles">Willpower Bonus Miles</label></option>
-								<option value="1 Yard"><label data-i18n="1-Yard">1 Yard</label></option>
-								<option value="You"><label data-i18n="You">You</label></option>
-								<option value="Touch"><label data-i18n="Touch">Touch</label></option>
-								<option value="Special"><label data-i18n="Special">Special</label></option>
-								<option value="[[@{Current_I}]] Yards" selected><label data-i18n="Initiative-Yards">Initiative Yards</label></option>
-								<option value="[[@{Current_IB}]] Miles" selected><label data-i18n="Initiative-Bonus-Miles">Initiative Bonus Miles</label></option>
-								<option value="[[@{Current_IntB}]] Yards" selected><label data-i18n="Intelligence-Bonus-Yards">Intelligence Bonus Yards</label></option>
-								<option value="[[@{Current_Fel}]] Yards" selected><label data-i18n="Fellowship-Yards">Fellowship Yards</label></option>
-								<option value="[[@{Current_FelB}]] Yards" selected><label data-i18n="Fellowship-Bonus-Yards">Fellowship Bonus Yards</label></option>
-								<option value="6 Yards" selected><label data-i18n="6-Yards">6 Yards</label></option>
+								<option value="^{You}" data-i18n="You" selected>You</option>
+								<option value="^{Touch}" data-i18n="Touch">Touch</option>
+								<option value="^{Special}" data-i18n="Special">Special</option>
+								<option value="1 ^{yard}" data-i18n="1-Yard">1 Yard</option>
+								<option value="6 ^{yards}" data-i18n="6-Yards">6 Yards</option>
+								<option value="[[@{Current_WP}]] ^{yards}" data-i18n="Willpower-Yards">Willpower Yards</option>
+								<option value="[[@{Current_WPB}]] ^{yards}" data-i18n="Willpower-Bonus-Yards">Willpower Bonus Yards</option>
+								<option value="[[@{Current_WPB}]] ^{miles}" data-i18n="Willpower-Bonus-Miles">Willpower Bonus Miles</option>
+								<option value="[[@{Current_I}]] ^{yards}" data-i18n="Initiative-Yards">Initiative Yards</option>
+								<option value="[[@{Current_IB}]] ^{miles}" data-i18n="Initiative-Bonus-Miles">Initiative Bonus Miles</option>
+								<option value="[[@{Current_IntB}]] ^{yards}" data-i18n="Intelligence-Bonus-Yards">Intelligence Bonus Yards</option>
+								<option value="[[@{Current_Fel}]] ^{yards}" data-i18n="Fellowship-Yards">Fellowship Yards</option>
+								<option value="[[@{Current_FelB}]] ^{yards}" data-i18n="Fellowship-Bonus-Yards">Fellowship Bonus Yards</option>
 							</select>
 						</div>
-						<div style="width: 10%;"><input type="text" name="attr_SpellTarget" class="sheet-center" /></div>
-						<div style="width: 10%;"><input type="text" name="attr_SpellDuration" class="sheet-center" /></div>
-						<div style="width: 25%;"><input type="text" name="attr_SpellEffect" /></div>
-						<div style="width: 5%;"><button type="roll" name="cast_spell_info" value="@{template} {{title=@{Spell}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}@{SpellType}]]}} {{spell=@{Spell}}} {{cn=@{SpellCN}}} {{range=@{SpellRange}}} {{target=@{SpellTarget}}} {{duration=@{SpellDuration}}} {{effect=@{SpellEffect}}} {{description=@{Spelldesc}}} {{hitlocation=1}} {{description=@{Spelldesc}}} {{channelling=@{ExtendedChannellingSl}}}"><span>Roll</span></button></div>
+						<div style="width: 10%;"><input type="text" name="attr_SpellTarget" class="sheet-center" placeholder="Spell target…" data-i18n-placeholder="spell-target-pl" /></div>
+						<div style="width: 10%;"><input type="text" name="attr_SpellDuration" class="sheet-center" placeholder="Spell duration…" data-i18n-placeholder="spell-duration-pl" /></div>
+						<div style="width: 25%;"><input type="text" name="attr_SpellEffect" placeholder="Spell effect…" data-i18n-placeholder="spell-effect-pl" /></div>
+						<div style="width: 5%;"><button type="roll" name="cast_spell_info" value="@{template} {{title=@{Spell}}} {{dice=[[1d100cs01cs02cs03cs04cs05cs11cs22cs33cs44cs55cs66cs77cs88cf96cf97cf98cf99cf100]]}} {{against=[[@{modifier}+@{SpellType}]]}} {{modifier=[[@{modifier}]]}} {{spell=@{Spell}}} {{cn=@{SpellCN}}} {{range=@{SpellRange}}} {{target=@{SpellTarget}}} {{duration=@{SpellDuration}}} {{effect=@{SpellEffect}}} {{description=@{Spelldesc}}} {{hitlocation=1}} {{description=@{Spelldesc}}} {{channelling=@{ExtendedChannellingSl}}}"><span data-i18n="Roll">Roll</span></button></div>
 						<div style="width: 5%;" class="sheet-spacer"></div>
 						<input type="checkbox" name="attr_SpellDescHide" class="sheet-desc" /><span></span>
 						<div style="width: 95%" class="sheet-desc">
-							<textarea name="attr_Spelldesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Spelldesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1779,18 +1801,12 @@
 			<div class="sheet-col">
 				<h4 data-i18n="INJURIES-AFFLICTIONS-PYSCHOLOGY-&-MUTATIONS">INJURIES, AFFLICTIONS, PSYCHOLOGY AND MUTATIONS</h4>
 				<div class="sheet-row sheet-headline" style="width: 70%; margin-left: 15%; margin-right: 15%;">
-
 					<div style="width: 30%"><label class="sheet-right" data-i18n="Current-Corruption">Current Corruption</label></div>
 					<div style="width: 7.5%"><input type="number" name="attr_corruption" value="0" /></div>
-					<div style="width: 5%;" class="sheet-spacer"></div>
-
-					<div style="width: 25%"><label class="sheet-right" data-i18n="Max-Corruption">Max Corruption</label></div>
+					<div style="width: 27.5%"><label class="sheet-right" data-i18n="Max-Corruption">Max Corruption</label></div>
 					<div style="width: 7.5%"><input type="number" name="attr_maxcorruption" value="floor(@{Current_TB}+@{Current_WPB}+@{corruptionmod})" disabled /></div>
-					<div style="width: 5%;" class="sheet-spacer"></div>
-
-					<div style="width: 12.5%"><label class="sheet-right" data-i18n="Modifier">Modifier</label></div>
+					<div style="width: 20%"><label class="sheet-right" data-i18n="Modifier">Modifier</label></div>
 					<div style="width: 7.5%"><input type="number" name="attr_corruptionmod" value="0" /></div>
-
 				</div>
 				<div class="sheet-row">
 					<div style="width: 20%;"><label data-i18n="Name">Name</label></div>
@@ -1800,14 +1816,14 @@
 				</div>
 				<fieldset class="repeating_afflictions" name="repeating_afflicitons">
 					<div class="sheet-row">
-						<div style="width: 20%;"><input type="text" name="attr_afflictionname" placeholder="Affliction Name" /></div>
-						<div style="width: 50%;"><input type="text" name="attr_afflictioneffect" placeholder="Affliction Effect" /></div>
-						<div style="width: 20%;"><input type="text" name="attr_afflictionhealtime" placeholder="Affliction Heal Time" class="sheet-center" /></div>
+						<div style="width: 20%;"><input type="text" name="attr_afflictionname" placeholder="Affliction name…" data-i18n-placeholder="affliction-name-pl" /></div>
+						<div style="width: 50%;"><input type="text" name="attr_afflictioneffect" placeholder="Affliction effect…" data-i18n-placeholder="affliction-effect-pl" /></div>
+						<div style="width: 20%;"><input type="text" name="attr_afflictionhealtime" class="sheet-center" placeholder="Affliction heal time…" data-i18n-placeholder="affliction-heal-time-pl" /></div>
 						<div style="width: 5%;"><button type="roll" name="roll_AfflicitonDisplay" value="@{template} {{title=@{afflictionname}}} {{afflictiondescription=@{Afflicitondesc}}} {{afflictionEffect=@{afflictioneffect}}} {{afflictionTime=@{afflictionhealtime}}}"><span data-i18n="Show">Show</span></button></div>
 						<div style="width: 5%;" class="spacer"></div>
 						<input type="checkbox" name="attr_AfflicitonDescHide" class="sheet-desc" /><span></span>
 						<div style="width: 95%" class="sheet-desc">
-							<textarea name="attr_Afflicitondesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Afflicitondesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1818,19 +1834,19 @@
 				<h4 data-i18n="Trappings">TRAPPINGS</h4>
 				<div class="sheet-row">
 					<div style="width: 80%;"><label data-i18n="Name">Name</label></div>
-					<div style="width: 5%;"><label data-i18n="Enc">Enc</label></div>
+					<div style="width: 5%;"><label class="sheet-has-title" data-i18n="Enc." data-i18n-title="Encumbrance">Enc.</label></div>
 					<div style="width: 15%;" class="spacer"></div>
 				</div>
 				<fieldset class="repeating_trappings" name="repeating_trappings">
 					<div class="sheet-row">
-						<div style="width: 80%;"><input type="text" name="attr_TrappingName" placeholder="Name" /></div>
+						<div style="width: 80%;"><input type="text" name="attr_TrappingName" placeholder="Trapping name…" data-i18n-placeholder="trapping-name-pl" /></div>
 						<div style="width: 5%;"><input type="number" name="attr_TrappingWeight" value="0" /></div>
 						<div style="width: 5%;"><input type="checkbox" name="attr_TrappingHeld" value="1" checked /><span></span></div>
 						<div style="width: 5%;"><button type="roll" name="roll_TrappingDisplay" value="@{template} {{title=@{TrappingName}}} {{talentdescription=@{TrappingDesc}}}"><span data-i18n="Show">Show</span></button></div>
 						<div style="width: 5%;" class="spacer"></div>
 						<input type="checkbox" name="attr_TrappingDescHide" class="sheet-desc" /><span></span>
 						<div style="width: 95%" class="sheet-desc">
-							<textarea name="attr_Trappingdesc" placeholder="Description" spellcheck="false"></textarea>
+							<textarea name="attr_Trappingdesc" placeholder="Description…" data-i18n-placeholder="description-pl" spellcheck="false"></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -1900,14 +1916,14 @@
 				<fieldset class="repeating_advancements">
 					<table>
 						<tr>
-							<td style="width: 25%;"><input type="text" name="attr_advancement1" placeholder="Advancement Name" /></td>
-							<td style="width: 5%;"><input type="number" placeholder="Cost" value="0" name="attr_advancement1xp" /></td>
+							<td style="width: 25%;"><input type="text" name="attr_advancement1" placeholder="Advancement name…" data-i18n-placeholder="advancement-name-pl" /></td>
+							<td style="width: 5%;"><input type="number" placeholder="Advancement cost…" data-i18n-placeholder="advancement-cost-pl" value="0" name="attr_advancement1xp" /></td>
 							<td style="width: 5%;"></td>
-							<td style="width: 25%;"><input type="text" name="attr_advancement2" placeholder="Advancement Name" /></td>
-							<td style="width: 5%;"><input type="number" placeholder="Cost" value="0" name="attr_advancement2xp" /></td>
+							<td style="width: 25%;"><input type="text" name="attr_advancement2" placeholder="Advancement name…" data-i18n-placeholder="advancement-name-pl" /></td>
+							<td style="width: 5%;"><input type="number" placeholder="Advancement cost…" data-i18n-placeholder="advancement-cost-pl" value="0" name="attr_advancement2xp" /></td>
 							<td style="width: 5%;"></td>
-							<td style="width: 25%;"><input type="text" name="attr_advancement3" placeholder="Advancement Name" /></td>
-							<td style="width: 5%;"><input type="number" placeholder="Cost" value="0" name="attr_advancement3xp" /></td>
+							<td style="width: 25%;"><input type="text" name="attr_advancement3" pplaceholder="Advancement name…" data-i18n-placeholder="advancement-name-pl"" /></td>
+							<td style="width: 5%;"><input type="number" placeholder="Advancement cost…" data-i18n-placeholder="advancement-cost-pl" value="0" name="attr_advancement3xp" /></td>
 						</tr>
 					</table>
 				</fieldset>
@@ -1929,730 +1945,590 @@
 <!-- Rolltemplate wfrp4 -->
 <rolltemplate class="sheet-rolltemplate-wfrp4">
 	<table>
-		<th style="width: 10%">
+		<th>
 			<div class="sheet-rollcharacter">{{name}}</div>
 			<div class="sheet-rolltitle">{{title}}</div>
 		</th>
 		<tr>
-			<td style="text-align: left; width: 10%">
+			<td>
+
 				{{#dice}}
-				<b>Rolled: </b> {{dice}} <b>vs</b> {{against}}
+				<div class="sheet-dice-result">
+				<!-- Roll Result -->
+				{{#rollWasCrit() dice}}{{#rollGreater() dice against}}<span class="sheet-critical-failure"></span>{{/rollGreater() dice against}}{{/rollWasCrit() dice}}
+				<span class="sheet-roll-result"><span class="sheet-label" data-i18n="Rolled">Rolled</span> {{dice}} <b data-i18n="vs">vs</b> {{against}}</span>
+
+				<!-- Modifier -->
+				{{#modifier}}
+				<span class="sheet-small">
+				{{#^rollTotal() modifier 0}}<b data-i18n="mod">mod</b>
+				{{#rollLess() modifier 0}}<span class="sheet-negative">{{/rollLess() modifier 0}}
+				{{#rollGreater() modifier 0}}<span class="sheet-positive">{{/rollGreater() modifier 0}}
+				{{#rollGreater() modifier 0}}+{{/rollGreater() modifier 0}}{{modifier}}</span>
+				{{/^rollTotal() modifier 0}}
+				</span>
+				{{/modifier}}
+				<br>
 
 				<!-- Success Result -->
-				<br>**Result:**
+				<span class="sheet-label" data-i18n="Result">Result</span>
 				{{#rollWasCrit() dice}}
-				{{#rollLess() dice against}}
-				<b><i style="color: #3fb315;">Critical</i></b>
-				{{/rollLess() dice against}}
-				{{#rollGreater() dice against}}
-				<b><i style="color: #cc6633;">Fumbling</i></b>
-				{{/rollGreater() dice against}}
+				{{#^rollGreater() dice against}}<b><i class="sheet-positive"><span data-i18n="Critical-Success">Critical Success</span></i></b>{{/^rollGreater() dice against}}
+				{{#rollGreater() dice against}}<b><i class="sheet-negative"><span data-i18n="Fumbling-Failure">Fumbling Failure</span></i></b>{{/rollGreater() dice against}}
 				{{/rollWasCrit() dice}}
-				{{#rollWasFumble() dice}}
-				<b><i style="color: #cc6633;">Fumbling</i></b>
-				{{/rollWasFumble() dice}}
-				{{#rollLess() dice against}}
-				<b><i style="color: #3fb315;">Success</i></b><br>
-				{{/rollLess() dice against}}
-				{{#rollTotal() dice against}}
-				<b><i style="color: #3fb315;">Success</i></b><br>
-				{{/rollTotal() dice against}}
-				{{#rollGreater() dice against}}
-				<b><i style="color: #cc6633;">Failure</i></b><br>
-				{{/rollGreater() dice against}}
+				{{#rollWasFumble() dice}}<b><i class="sheet-negative"><span data-i18n="Fumbling-Failure">Fumbling Failure</span></i></b>{{/rollWasFumble() dice}}
+				{{#^rollWasCrit() dice}}
+				{{#^rollWasFumble() dice}}
+				{{#^rollGreater() dice against}}<b><i class="sheet-positive"><span data-i18n="Success">Success</span></i></b>{{/^rollGreater() dice against}}
+				{{#rollGreater() dice against}}<b><i class="sheet-negative"><span data-i18n="Failure">Failure</span></i></b>{{/rollGreater() dice against}}
+				{{/^rollWasFumble() dice}}
+				{{/^rollWasCrit() dice}}
+				</div>
 				{{/dice}}
 
-				<!-- Spell Description -->
-				{{#description}}
-				<br><b>Description: </b> <i>{{description}}</i><br>
-				{{/description}}
-
-				<!-- Weapon Stats -->
+				<!-- Weapon Stats 1st part -->
 				{{#weapon}}
-				<br><b>Weapon:</b> {{weapon}}<br>
-				<b>Range/Reach:</b> {{range}}<br>
-				<b>Dmg:</b> {{damage}}
+				<span class="sheet-label" data-i18n="Range/Reach">Range/Reach</span> {{range}}<br>
+				<span class="sheet-label" data-i18n="Damage">Damage</span> {{damage}}
 				{{/weapon}}
 
-				<!-- Spell Stats 1st Part -->
+				<!-- Spell Stats 1st part -->
 				{{#spell}}
-				<br><b>Spell:</b> {{spell}}<br>
-				<b>CN:</b> {{cn}}
+				<span class="sheet-label" data-i18n="CN">CN</span> {{cn}}
 				{{/spell}}
-
-				<!-- Success Level -->
-				{{#rollBetween() against 90 99}}
-				{{#rollTotal() dice 100}}–1{{/rollTotal() dice 100}}
-				{{#rollBetween() dice against 99}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 99}}
-				{{#rollBetween() dice 90 against}}<b>SL: </b>+0{{/rollBetween() dice 90 against}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+1{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+2{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+3{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+4{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+5{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+6{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+7{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+8{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+9{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 90 99}}
-				{{#rollBetween() against 80 89}}
-				{{#rollTotal() dice 100}}<b>SL: </b>–2{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–1{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice against 89}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 89}}
-				{{#rollBetween() dice 80 against}}<b>SL: </b>+0{{/rollBetween() dice 80 against}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+1{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+2{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+3{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+4{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+5{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+6{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+7{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+8{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 80 89}}
-				{{#rollBetween() against 70 79}}
-				{{#rollTotal() dice 100}}<b>SL: </b>–3{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–2{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–1{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice against 79}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 79}}
-				{{#rollBetween() dice 70 against}}<b>SL: </b>+0{{/rollBetween() dice 70 against}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+1{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+2{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+3{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+4{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+5{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+6{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}+7{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 70 79}}
-				{{#rollBetween() against 60 69}}
-				{{#rollTotal() dice 100}}–4{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–3{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–2{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–1{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice against 69}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 69}}
-				{{#rollBetween() dice 60 against}}<b>SL: </b>+0{{/rollBetween() dice 60 against}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+1{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+2{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+3{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+4{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+5{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+6{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 60 69}}
-				{{#rollBetween() against 50 59}}
-				{{#rollTotal() dice 100}}<b>SL: </b>–5{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–4{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–3{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–2{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–1{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice against 59}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 59}}
-				{{#rollBetween() dice 50 against}}<b>SL: </b>+0{{/rollBetween() dice 50 against}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+1{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+2{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+3{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+4{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+5{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 50 59}}
-				{{#rollBetween() against 40 49}}
-				{{#rollTotal() dice 100}}–6{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–5{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–4{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–3{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–2{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>–1{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice against 49}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 49}}
-				{{#rollBetween() dice 40 against}}<b>SL: </b>+0{{/rollBetween() dice 40 against}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+1{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+2{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+3{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+4{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 40 49}}
-				{{#rollBetween() against 30 39}}
-				{{#rollTotal() dice 100}}-7{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–6{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–5{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–4{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–3{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>–2{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>–1{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice against 39}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 39}}
-				{{#rollBetween() dice 30 against}}<b>SL: </b>+0{{/rollBetween() dice 30 against}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+1{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+2{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+3{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 30 39}}
-				{{#rollBetween() against 20 29}}
-				{{#rollTotal() dice 100}}–8{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–7{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–6{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–5{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–4{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>–3{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>–2{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>–1{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice against 29}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 29}}
-				{{#rollBetween() dice 20 against}}<b>SL: </b>+0{{/rollBetween() dice 20 against}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+1{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+2{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 20 29}}
-				{{#rollBetween() against 10 19}}
-				{{#rollTotal() dice 100}}<b>SL: </b>–9{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–8{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–7{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–6{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–5{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>–4{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>–3{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>–2{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>–1{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice against 19}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 19}}
-				{{#rollBetween() dice 10 against}}<b>SL: </b>+0{{/rollBetween() dice 10 against}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+1{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 10 19}}
-				{{#rollBetween() against 1 9}}
-				{{#rollTotal() dice 100}}<b>SL: </b>–10{{/rollTotal() dice 100}}
-				{{#rollBetween() dice 90 99}}<b>SL: </b>–9{{/rollBetween() dice 90 99}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>–8{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>–7{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>–6{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>–5{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>–4{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>–3{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>–2{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>–1{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice against 9}}
-				{{#^rollTotal() dice against}}<b>SL: </b>–0{{/^rollTotal() dice against}}
-				{{/rollBetween() dice against 9}}
-				{{#rollBetween() dice 1 against}}<b>SL: </b>+0{{/rollBetween() dice 1 against}}
-				{{/rollBetween() against 1 9}}
-
-				{{#rollBetween() against 100 109}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+1{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+2{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+3{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+4{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+5{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+6{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+7{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+8{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+9{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+10{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 100 109}}
-
-				{{#rollBetween() against 110 119}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+2{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+3{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+4{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+5{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+6{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+7{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+8{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+9{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+10{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 1 9}}<b>SL: </b>+10{{/rollBetween() dice 1 9}}
-				{{/rollBetween() against 110 119}}
-
-				{{#rollBetween() against 120 129}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+3{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+4{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+5{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+6{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+7{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+8{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+9{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+10{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+11{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 03 09}}<b>SL: </b>+11{{/rollBetween() dice 03 09}}
-				{{#rollBetween() dice 01 02}}<b>SL: </b>+12{{/rollBetween() dice 01 02}}
-				{{/rollBetween() against 120 129}}
-
-				{{#rollBetween() against 130 139}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+4{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+5{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+6{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+7{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+8{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+9{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+10{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+11{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+12{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 04 09}}<b>SL: </b>+12{{/rollBetween() dice 04 09}}
-				{{#rollBetween() dice 01 03}}<b>SL: </b>+13{{/rollBetween() dice 01 03}}
-				{{/rollBetween() against 130 139}}
-
-				{{#rollBetween() against 140 149}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+5{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+6{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+7{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+8{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+9{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+10{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+11{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+12{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+13{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 05 09}}<b>SL: </b>+13{{/rollBetween() dice 05 09}}
-				{{#rollBetween() dice 01 04}}<b>SL: </b>+14{{/rollBetween() dice 01 04}}
-				{{/rollBetween() against 140 149}}
-
-				{{#rollBetween() against 150 159}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+6{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+7{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+8{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+9{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+10{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+11{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+12{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+13{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+14{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 06 09}}<b>SL: </b>+14{{/rollBetween() dice 06 09}}
-				{{#rollBetween() dice 01 05}}<b>SL: </b>+15{{/rollBetween() dice 01 05}}
-				{{/rollBetween() against 150 159}}
-
-				{{#rollBetween() against 160 169}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+7{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+8{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+9{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+10{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+11{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+12{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+13{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+14{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+15{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 07 09}}<b>SL: </b>+15{{/rollBetween() dice 07 09}}
-				{{#rollBetween() dice 01 06}}<b>SL: </b>+16{{/rollBetween() dice 01 06}}
-				{{/rollBetween() against 160 169}}
-
-				{{#rollBetween() against 170 179}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+8{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+9{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+10{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+11{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+12{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+13{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+14{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+15{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+16{{/rollBetween() dice 10 19}}
-				{{#rollBetween() dice 08 09}}<b>SL: </b>+16{{/rollBetween() dice 08 09}}
-				{{#rollBetween() dice 01 07}}<b>SL: </b>+17{{/rollBetween() dice 01 07}}
-				{{/rollBetween() against 170 179}}
-
-				{{#rollBetween() against 180 189}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+9{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+10{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+11{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+12{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+13{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+14{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+15{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+16{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+17{{/rollBetween() dice 10 19}}
-				{{#rollTotal() dice 09}}<b>SL: </b>+17{{/rollTotal() dice 09}}
-				{{#rollBetween() dice 01 08}}<b>SL: </b>+18{{/rollBetween() dice 01 08}}
-				{{/rollBetween() against 180 189}}
-				{{#rollBetween() against 190 199}}
-				{{#rollBetween() dice 96 99}}<b>SL: </b>-1{{/rollBetween() dice 96 99}}
-				{{#rollBetween() dice 90 95}}<b>SL: </b>+10{{/rollBetween() dice 90 95}}
-				{{#rollBetween() dice 80 89}}<b>SL: </b>+11{{/rollBetween() dice 80 89}}
-				{{#rollBetween() dice 70 79}}<b>SL: </b>+12{{/rollBetween() dice 70 79}}
-				{{#rollBetween() dice 60 69}}<b>SL: </b>+13{{/rollBetween() dice 60 69}}
-				{{#rollBetween() dice 50 59}}<b>SL: </b>+14{{/rollBetween() dice 50 59}}
-				{{#rollBetween() dice 40 49}}<b>SL: </b>+15{{/rollBetween() dice 40 49}}
-				{{#rollBetween() dice 30 39}}<b>SL: </b>+16{{/rollBetween() dice 30 39}}
-				{{#rollBetween() dice 20 29}}<b>SL: </b>+17{{/rollBetween() dice 20 29}}
-				{{#rollBetween() dice 10 19}}<b>SL: </b>+18{{/rollBetween() dice 10 19}}
-				{{#rollLess() against 198}}
-				{{#rollTotal() dice 09}}<b>SL: </b>+18{{/rollTotal() dice 09}}
-				{{#rollBetween() dice 01 08}}<b>SL: </b>+19{{/rollBetween() dice 01 08}}
-				{{/rollLess() against 198}}
-				{{#rollTotal() against 199}} <b>SL: </b>+19 {{/rollTotal() against 199}}
-				{{/rollBetween() against 190 199}}
-				{{#rollGreater() against 200}}
-				<b>SL: </b>+20 <i style="font-size: .8em;">max calculated value</i>
-				{{/rollGreater() against 200}}
 
 				<!-- Extended Channelling SL -->
 				{{#channelling}}
-				<b>Channelling SL:</b> {{channelling}}
+				<span class="sheet-label" data-i18n="Channelled-SL">Channelled SL</span> {{channelling}}
 				{{/channelling}}
+
+				<!-- Success Level -->
+				{{#dice}}
+				<span class="sheet-label" data-i18n="SL">SL</span>
+
+				{{#rollLess() against -110}}
+				{{#rollBetween() dice 6 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 6 100}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollLess() against -110}}
+
+				{{#rollBetween() against -109 -100}}
+				{{#rollBetween() dice 10 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 10 100}}
+				{{#rollBetween() dice 6 9}}-10{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -109 -100}}
+
+				{{#rollBetween() against -99 -90}}
+				{{#rollBetween() dice 20 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 20 100}}
+				{{#rollBetween() dice 10 19}}–10{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-9{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -99 -90}}
+
+				{{#rollBetween() against -89 -80}}
+				{{#rollBetween() dice 30 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 30 100}}
+				{{#rollBetween() dice 20 29}}–10{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–9{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-8{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -89 -80}}
+
+				{{#rollBetween() against -79 -70}}
+				{{#rollBetween() dice 40 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 40 100}}
+				{{#rollBetween() dice 30 39}}–10{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–9{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–8{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-7{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -79 -70}}
+
+				{{#rollBetween() against -69 -60}}
+				{{#rollBetween() dice 50 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 50 100}}
+				{{#rollBetween() dice 40 49}}–10{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–9{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–8{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–7{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-6{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -69 -60}}
+
+				{{#rollBetween() against -59 -50}}
+				{{#rollBetween() dice 60 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 60 100}}
+				{{#rollBetween() dice 50 59}}–10{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–9{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–8{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–7{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–6{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-5{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -59 -50}}
+
+				{{#rollBetween() against -49 -40}}
+				{{#rollBetween() dice 70 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 70 100}}
+				{{#rollBetween() dice 60 69}}–10{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–9{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–8{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–7{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–6{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–5{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-4{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -49 -40}}
+
+				{{#rollBetween() against -39 -30}}
+				{{#rollBetween() dice 80 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 80 100}}
+				{{#rollBetween() dice 70 79}}–10{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–9{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–8{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–7{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–6{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–5{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–4{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-3{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -39 -30}}
+
+				{{#rollBetween() against -29 -20}}
+				{{#rollBetween() dice 90 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollBetween() dice 90 100}}
+				{{#rollBetween() dice 80 89}}–10{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–9{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–8{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–7{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–6{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–5{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–4{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–3{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-2{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -29 -20}}
+
+				{{#rollBetween() against -19 -10}}
+				{{#rollTotal() dice 100}}-10 <span class="sheet-small"><i>min calculated SL</i></span>{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–10{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–9{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–8{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–7{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–6{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–5{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–4{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–3{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–2{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}-1{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -19 -10}}
+
+				{{#rollBetween() against -9 9}}
+				{{#rollTotal() dice 100}}–10{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–9{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–8{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–7{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–6{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–5{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–4{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–3{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–2{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}–1{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 6 9}}
+				{{#rollBetween() dice against 9}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 9}}
+				{{#rollBetween() dice 6 against}}+0{{/rollBetween() dice 6 against}}
+				{{/rollBetween() dice 6 9}}
+				{{#rollBetween() dice 1 5}}+1{{/rollBetween() dice 1 5}}
+				{{/rollBetween() against -9 9}}
+
+				{{#rollBetween() against 10 19}}
+				{{#rollTotal() dice 100}}–9{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–8{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–7{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–6{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–5{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–4{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–3{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–2{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}–1{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice against 19}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 19}}
+				{{#rollBetween() dice 10 against}}+0{{/rollBetween() dice 10 against}}
+				{{#rollBetween() dice 1 9}}+1{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 10 19}}
+
+				{{#rollBetween() against 20 29}}
+				{{#rollTotal() dice 100}}–8{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–7{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–6{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–5{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–4{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–3{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–2{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}–1{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice against 29}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 29}}
+				{{#rollBetween() dice 20 against}}+0{{/rollBetween() dice 20 against}}
+				{{#rollBetween() dice 10 19}}+1{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+2{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 20 29}}
+
+				{{#rollBetween() against 30 39}}
+				{{#rollTotal() dice 100}}-7{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–6{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–5{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–4{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–3{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–2{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}–1{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice against 39}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 39}}
+				{{#rollBetween() dice 30 against}}+0{{/rollBetween() dice 30 against}}
+				{{#rollBetween() dice 20 29}}+1{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+2{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+3{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 30 39}}
+
+				{{#rollBetween() against 40 49}}
+				{{#rollTotal() dice 100}}–6{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–5{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–4{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–3{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–2{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}–1{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice against 49}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 49}}
+				{{#rollBetween() dice 40 against}}+0{{/rollBetween() dice 40 against}}
+				{{#rollBetween() dice 30 39}}+1{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+2{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+3{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+4{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 40 49}}
+
+				{{#rollBetween() against 50 59}}
+				{{#rollTotal() dice 100}}–5{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–4{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–3{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–2{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}–1{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice against 59}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 59}}
+				{{#rollBetween() dice 50 against}}+0{{/rollBetween() dice 50 against}}
+				{{#rollBetween() dice 40 49}}+1{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+2{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+3{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+4{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+5{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 50 59}}
+
+				{{#rollBetween() against 60 69}}
+				{{#rollTotal() dice 100}}–4{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–3{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–2{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}–1{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice against 69}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 69}}
+				{{#rollBetween() dice 60 against}}+0{{/rollBetween() dice 60 against}}
+				{{#rollBetween() dice 50 59}}+1{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+2{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+3{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+4{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+5{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+6{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 60 69}}
+
+				{{#rollBetween() against 70 79}}
+				{{#rollTotal() dice 100}}–3{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–2{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice 80 89}}–1{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice against 79}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 79}}
+				{{#rollBetween() dice 70 against}}+0{{/rollBetween() dice 70 against}}
+				{{#rollBetween() dice 60 69}}+1{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+2{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+3{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+4{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+5{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+6{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+7{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 70 79}}
+
+				{{#rollBetween() against 80 89}}
+				{{#rollTotal() dice 100}}–2{{/rollTotal() dice 100}}
+				{{#rollBetween() dice 90 99}}–1{{/rollBetween() dice 90 99}}
+				{{#rollBetween() dice against 89}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 89}}
+				{{#rollBetween() dice 80 against}}+0{{/rollBetween() dice 80 against}}
+				{{#rollBetween() dice 70 79}}+1{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+2{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+3{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+4{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+5{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+6{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+7{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+8{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 80 89}}
+
+				{{#rollBetween() against 90 99}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice against 95}}{{#^rollTotal() dice against}}–0{{/^rollTotal() dice against}}{{/rollBetween() dice against 95}}
+				{{#rollBetween() dice 90 against}}+0{{/rollBetween() dice 90 against}}
+				{{#rollBetween() dice 80 89}}+1{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+2{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+3{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+4{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+5{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+6{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+7{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+8{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+9{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 90 99}}
+
+				{{#rollBetween() against 100 109}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+1{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+2{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+3{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+4{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+5{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+6{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+7{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+8{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+9{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+10{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 100 109}}
+
+				{{#rollBetween() against 110 119}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+2{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+3{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+4{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+5{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+6{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+7{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+8{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+9{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 10 19}}+10{{/rollBetween() dice 10 19}}
+				{{#rollBetween() dice 1 9}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 9}}
+				{{/rollBetween() against 110 119}}
+
+				{{#rollBetween() against 120 129}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+3{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+4{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+5{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+6{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+7{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+8{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+9{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 20 29}}+10{{/rollBetween() dice 20 29}}
+				{{#rollBetween() dice 1 19}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 19}}
+				{{/rollBetween() against 120 129}}
+
+				{{#rollBetween() against 130 139}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+4{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+5{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+6{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+7{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+8{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+9{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 30 39}}+10{{/rollBetween() dice 30 39}}
+				{{#rollBetween() dice 1 29}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 29}}
+				{{/rollBetween() against 130 139}}
+
+				{{#rollBetween() against 140 149}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+5{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+6{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+7{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+8{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+9{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 40 49}}+10{{/rollBetween() dice 40 49}}
+				{{#rollBetween() dice 1 39}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 39}}
+				{{/rollBetween() against 140 149}}
+
+				{{#rollBetween() against 150 159}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+6{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+7{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+8{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+9{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 50 59}}+10{{/rollBetween() dice 50 59}}
+				{{#rollBetween() dice 1 49}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 49}}
+				{{/rollBetween() against 150 159}}
+
+				{{#rollBetween() against 160 169}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+7{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+8{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+9{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 60 69}}+10{{/rollBetween() dice 60 69}}
+				{{#rollBetween() dice 1 59}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 59}}
+				{{/rollBetween() against 160 169}}
+
+				{{#rollBetween() against 170 179}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+8{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+9{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 70 79}}+10{{/rollBetween() dice 70 79}}
+				{{#rollBetween() dice 1 69}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 69}}
+				{{/rollBetween() against 170 179}}
+
+				{{#rollBetween() against 180 189}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+9{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 80 89}}+10{{/rollBetween() dice 80 89}}
+				{{#rollBetween() dice 1 79}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 79}}
+				{{/rollBetween() against 180 189}}
+
+				{{#rollBetween() against 190 199}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 90 95}}+10{{/rollBetween() dice 90 95}}
+				{{#rollBetween() dice 1 89}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 89}}
+				{{/rollBetween() against 190 199}}
+
+				{{#rollGreater() against 199}}
+				{{#rollBetween() dice 96 100}}-1{{/rollBetween() dice 96 100}}
+				{{#rollBetween() dice 1 95}}+10 <span class="sheet-small"><i>max calculated SL</i></span>{{/rollBetween() dice 1 95}}
+				{{/rollGreater() against 199}}
+
+				{{/dice}}
 
 				<!-- Hit Location -->
 				{{#hitlocation}}
-				<br>
-
+				<br><span class="sheet-label" data-i18n="Hit Location">Hit Location</span>
 				<!-- Head -->
-				{{#rollTotal() dice 10}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 10}}
-				{{#rollTotal() dice 20}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 20}}
-				{{#rollTotal() dice 30}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 30}}
-				{{#rollTotal() dice 40}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 40}}
-				{{#rollTotal() dice 50}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 50}}
-				{{#rollTotal() dice 60}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 60}}
-				{{#rollTotal() dice 70}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 70}}
-				{{#rollTotal() dice 80}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 80}}
-				{{#rollTotal() dice 90}}
-				<b>Hit Location:</b> <i>Head</i>
-				{{/rollTotal() dice 90}}
-
+				{{#rollTotal() dice 10}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 10}}
+				{{#rollTotal() dice 20}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 20}}
+				{{#rollTotal() dice 30}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 30}}
+				{{#rollTotal() dice 40}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 40}}
+				{{#rollTotal() dice 50}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 50}}
+				{{#rollTotal() dice 60}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 60}}
+				{{#rollTotal() dice 70}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 70}}
+				{{#rollTotal() dice 80}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 80}}
+				{{#rollTotal() dice 90}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 90}}
+				{{#rollTotal() dice 100}}<span data-i18n="Head">Head</span>{{/rollTotal() dice 100}}
 				<!-- Left Arm -->
-				{{#rollTotal() dice 01}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 01}}
-				{{#rollTotal() dice 11}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 11}}
-				{{#rollTotal() dice 21}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 21}}
-				{{#rollTotal() dice 31}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 31}}
-				{{#rollTotal() dice 41}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 41}}
-				{{#rollTotal() dice 51}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 51}}
-				{{#rollTotal() dice 61}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 61}}
-				{{#rollTotal() dice 71}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 71}}
-				{{#rollTotal() dice 81}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 81}}
-				{{#rollTotal() dice 91}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 91}}
-				{{#rollTotal() dice 02}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 02}}
-				{{#rollTotal() dice 12}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 12}}
-				{{#rollTotal() dice 22}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 22}}
-				{{#rollTotal() dice 32}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 32}}
-				{{#rollTotal() dice 42}}
-				<b>Hit Location:</b> <i>Left Arm</i>
-				{{/rollTotal() dice 42}}
-
+				{{#rollTotal() dice 01}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 01}}
+				{{#rollTotal() dice 11}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 11}}
+				{{#rollTotal() dice 21}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 21}}
+				{{#rollTotal() dice 31}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 31}}
+				{{#rollTotal() dice 41}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 41}}
+				{{#rollTotal() dice 51}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 51}}
+				{{#rollTotal() dice 61}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 61}}
+				{{#rollTotal() dice 71}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 71}}
+				{{#rollTotal() dice 81}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 81}}
+				{{#rollTotal() dice 91}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 91}}
+				{{#rollTotal() dice 02}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 02}}
+				{{#rollTotal() dice 12}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 12}}
+				{{#rollTotal() dice 22}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 22}}
+				{{#rollTotal() dice 32}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 32}}
+				{{#rollTotal() dice 42}}<span data-i18n="Left Arm">Left Arm</span>{{/rollTotal() dice 42}}
 				<!-- Right Arm -->
-				{{#rollTotal() dice 52}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 52}}
-				{{#rollTotal() dice 62}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 62}}
-				{{#rollTotal() dice 72}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 72}}
-				{{#rollTotal() dice 82}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 82}}
-				{{#rollTotal() dice 92}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 92}}
-				{{#rollTotal() dice 03}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 03}}
-				{{#rollTotal() dice 13}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 13}}
-				{{#rollTotal() dice 23}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 23}}
-				{{#rollTotal() dice 33}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 33}}
-				{{#rollTotal() dice 43}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 43}}
-				{{#rollTotal() dice 53}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 53}}
-				{{#rollTotal() dice 63}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 63}}
-				{{#rollTotal() dice 73}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 73}}
-				{{#rollTotal() dice 83}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 83}}
-				{{#rollTotal() dice 93}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 93}}
-				{{#rollTotal() dice 04}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 04}}
-				{{#rollTotal() dice 14}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 14}}
-				{{#rollTotal() dice 24}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 24}}
-				{{#rollTotal() dice 34}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 34}}
-				{{#rollTotal() dice 44}}
-				<b>Hit Location:</b> <i>Right Arm</i>
-				{{/rollTotal() dice 44}}
-
+				{{#rollTotal() dice 52}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 52}}
+				{{#rollTotal() dice 62}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 62}}
+				{{#rollTotal() dice 72}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 72}}
+				{{#rollTotal() dice 82}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 82}}
+				{{#rollTotal() dice 92}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 92}}
+				{{#rollTotal() dice 03}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 03}}
+				{{#rollTotal() dice 13}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 13}}
+				{{#rollTotal() dice 23}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 23}}
+				{{#rollTotal() dice 33}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 33}}
+				{{#rollTotal() dice 43}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 43}}
+				{{#rollTotal() dice 53}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 53}}
+				{{#rollTotal() dice 63}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 63}}
+				{{#rollTotal() dice 73}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 73}}
+				{{#rollTotal() dice 83}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 83}}
+				{{#rollTotal() dice 93}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 93}}
+				{{#rollTotal() dice 04}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 04}}
+				{{#rollTotal() dice 14}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 14}}
+				{{#rollTotal() dice 24}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 24}}
+				{{#rollTotal() dice 34}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 34}}
+				{{#rollTotal() dice 44}}<span data-i18n="Right Arm">Right Arm</span>{{/rollTotal() dice 44}}
 				<!-- Body -->
-				{{#rollTotal() dice 54}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 54}}
-				{{#rollTotal() dice 64}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 64}}
-				{{#rollTotal() dice 74}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 74}}
-				{{#rollTotal() dice 84}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 84}}
-				{{#rollTotal() dice 94}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 94}}
-				{{#rollTotal() dice 05}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 05}}
-				{{#rollTotal() dice 15}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 15}}
-				{{#rollTotal() dice 25}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 25}}
-				{{#rollTotal() dice 35}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 35}}
-				{{#rollTotal() dice 45}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 45}}
-				{{#rollTotal() dice 55}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 55}}
-				{{#rollTotal() dice 65}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 65}}
-				{{#rollTotal() dice 75}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 75}}
-				{{#rollTotal() dice 85}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 85}}
-				{{#rollTotal() dice 95}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 95}}
-				{{#rollTotal() dice 06}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 06}}
-				{{#rollTotal() dice 16}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 16}}
-				{{#rollTotal() dice 26}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 26}}
-				{{#rollTotal() dice 36}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 36}}
-				{{#rollTotal() dice 46}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 46}}
-				{{#rollTotal() dice 56}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 56}}
-				{{#rollTotal() dice 66}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 66}}
-				{{#rollTotal() dice 76}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 76}}
-				{{#rollTotal() dice 86}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 86}}
-				{{#rollTotal() dice 96}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 96}}
-				{{#rollTotal() dice 07}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 07}}
-				{{#rollTotal() dice 17}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 17}}
-				{{#rollTotal() dice 27}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 27}}
-				{{#rollTotal() dice 37}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 37}}
-				{{#rollTotal() dice 47}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 47}}
-				{{#rollTotal() dice 57}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 57}}
-				{{#rollTotal() dice 67}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 67}}
-				{{#rollTotal() dice 77}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 77}}
-				{{#rollTotal() dice 87}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 87}}
-				{{#rollTotal() dice 97}}
-				<b>Hit Location:</b> <i>Body</i>
-				{{/rollTotal() dice 97}}
-
+				{{#rollTotal() dice 54}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 54}}
+				{{#rollTotal() dice 64}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 64}}
+				{{#rollTotal() dice 74}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 74}}
+				{{#rollTotal() dice 84}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 84}}
+				{{#rollTotal() dice 94}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 94}}
+				{{#rollTotal() dice 05}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 05}}
+				{{#rollTotal() dice 15}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 15}}
+				{{#rollTotal() dice 25}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 25}}
+				{{#rollTotal() dice 35}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 35}}
+				{{#rollTotal() dice 45}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 45}}
+				{{#rollTotal() dice 55}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 55}}
+				{{#rollTotal() dice 65}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 65}}
+				{{#rollTotal() dice 75}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 75}}
+				{{#rollTotal() dice 85}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 85}}
+				{{#rollTotal() dice 95}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 95}}
+				{{#rollTotal() dice 06}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 06}}
+				{{#rollTotal() dice 16}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 16}}
+				{{#rollTotal() dice 26}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 26}}
+				{{#rollTotal() dice 36}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 36}}
+				{{#rollTotal() dice 46}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 46}}
+				{{#rollTotal() dice 56}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 56}}
+				{{#rollTotal() dice 66}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 66}}
+				{{#rollTotal() dice 76}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 76}}
+				{{#rollTotal() dice 86}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 86}}
+				{{#rollTotal() dice 96}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 96}}
+				{{#rollTotal() dice 07}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 07}}
+				{{#rollTotal() dice 17}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 17}}
+				{{#rollTotal() dice 27}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 27}}
+				{{#rollTotal() dice 37}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 37}}
+				{{#rollTotal() dice 47}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 47}}
+				{{#rollTotal() dice 57}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 57}}
+				{{#rollTotal() dice 67}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 67}}
+				{{#rollTotal() dice 77}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 77}}
+				{{#rollTotal() dice 87}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 87}}
+				{{#rollTotal() dice 97}}<span data-i18n="Body">Body</span>{{/rollTotal() dice 97}}
 				<!-- Left Leg -->
-				{{#rollTotal() dice 08}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 08}}
-				{{#rollTotal() dice 18}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 18}}
-				{{#rollTotal() dice 28}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 28}}
-				{{#rollTotal() dice 38}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 38}}
-				{{#rollTotal() dice 48}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 48}}
-				{{#rollTotal() dice 58}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 58}}
-				{{#rollTotal() dice 68}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 68}}
-				{{#rollTotal() dice 78}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 78}}
-				{{#rollTotal() dice 88}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 88}}
-				{{#rollTotal() dice 98}}
-				<b>Hit Location:</b> <i>Left Leg</i>
-				{{/rollTotal() dice 98}}
-
+				{{#rollTotal() dice 08}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 08}}
+				{{#rollTotal() dice 18}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 18}}
+				{{#rollTotal() dice 28}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 28}}
+				{{#rollTotal() dice 38}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 38}}
+				{{#rollTotal() dice 48}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 48}}
+				{{#rollTotal() dice 58}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 58}}
+				{{#rollTotal() dice 68}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 68}}
+				{{#rollTotal() dice 78}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 78}}
+				{{#rollTotal() dice 88}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 88}}
+				{{#rollTotal() dice 98}}<span data-i18n="Left Leg">Left Leg</span>{{/rollTotal() dice 98}}
 				<!-- Right Leg -->
-				{{#rollTotal() dice 09}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 09}}
-				{{#rollTotal() dice 19}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 19}}
-				{{#rollTotal() dice 29}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 29}}
-				{{#rollTotal() dice 39}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 39}}
-				{{#rollTotal() dice 49}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 49}}
-				{{#rollTotal() dice 59}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 59}}
-				{{#rollTotal() dice 69}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 69}}
-				{{#rollTotal() dice 79}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 79}}
-				{{#rollTotal() dice 89}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 89}}
-				{{#rollTotal() dice 99}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 99}}
-				{{#rollTotal() dice 100}}
-				<b>Hit Location:</b> <i>Right Leg</i>
-				{{/rollTotal() dice 100}}
+				{{#rollTotal() dice 09}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 09}}
+				{{#rollTotal() dice 19}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 19}}
+				{{#rollTotal() dice 29}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 29}}
+				{{#rollTotal() dice 39}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 39}}
+				{{#rollTotal() dice 49}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 49}}
+				{{#rollTotal() dice 59}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 59}}
+				{{#rollTotal() dice 69}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 69}}
+				{{#rollTotal() dice 79}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 79}}
+				{{#rollTotal() dice 89}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 89}}
+				{{#rollTotal() dice 99}}<span data-i18n="Right Leg">Right Leg</span>{{/rollTotal() dice 99}}
 				{{/hitlocation}}
 
-				<!-- Weapon Stats -->
+				<!-- Weapon Stats 2nd part -->
 				{{#weapon}}
-				<br>
-
-				<!-- Weapon Qualities/Flaws -->
-				<b>Qualities/Flaws:</b> {{qualities}}
+				<br><span class="sheet-label" data-i18n="Qualities/Flaws">Qualities/Flaws</span> {{qualities}}
 				{{/weapon}}
 
 				<!-- Spell Stats 2nd part -->
 				{{#spell}}
-				<br><b>Range:</b> {{range}}<br>
-				<b>Target:</b> {{target}}<br>
-				<b>Duration:</b> {{duration}}<br>
-				<b>Effect:</b> {{effect}}
+				<br><span class="sheet-label" data-i18n="Range">Range</span> {{range}}
+				<br><span class="sheet-label" data-i18n="Target">Target</span> {{target}}
+				<br><span class="sheet-label" data-i18n="Duration">Duration</span> {{duration}}
+				<br><span class="sheet-label" data-i18n="Effect">Effect</span> {{effect}}
 				{{/spell}}
+
+				<!-- Description -->
+				{{#description}}
+				<div class="sheet-description">{{description}}</div>
+				{{/description}}
 
 				<!-- Talent Description -->
 				{{#talentdescription}}
-				<b>Description: </b><i>{{talentdescription}}</i>
+				<div class="sheet-description">{{talentdescription}}</div>
 				{{/talentdescription}}
 
 				<!-- Affliction Description -->
 				{{#afflictionEffect}}
-				<b>Effect: </b><i>{{afflictionEffect}}</i><br>
-				<b>Time: </b><i>{{afflictionTime}}</i><br>
-				<b>Description: </b><i>{{afflictiondescription}}</i>
+				<span class="sheet-label" data-i18n="Effect">Effect</span> {{afflictionEffect}}<br>
+				<span class="sheet-label" data-i18n="Time">Time</span> {{afflictionTime}}<br>
+				<div class="sheet-description">{{afflictiondescription}}</div>
 				{{/afflictionEffect}}
 
 				<!-- Initiative Description -->
 				{{#initiativeTest}}
-				<b>Initiative Bonus: </b><i>{{initiativeTestInitiativeBonus}}</i><br>
+				<span class="sheet-label" data-i18n="Initiative-Bonus">Initiative Bonus</span> {{initiativeTestInitiativeBonus}}<br>
 				{{#initiativeTestAgilityBonus}}
-				<b>Agility Bonus: </b><i>{{initiativeTestAgilityBonus}}</i><br>
+				<span class="sheet-label" data-i18n="Agility-Bonus">Agility Bonus</span> {{initiativeTestAgilityBonus}}<br>
 				{{/initiativeTestAgilityBonus}}
-				<b>Talents: </b><i>{{initiativeTestTalents}}</i><br>
-				<b>Test: </b>{{initiativeTest}}
+				<span class="sheet-label" data-i18n="Initiative-Talents">Talents</span> {{initiativeTestTalents}}<br>
+				<span class="sheet-label" data-i18n="Test">Test</span> {{initiativeTest}}
 				{{/initiativeTest}}
 
 			</td>
@@ -2991,12 +2867,23 @@
 		};
 
 		////////////////////////////////////////////////////////////////////////////
+		// * Toggles
+		////////////////////////////////////////////////////////////////////////////
+
+		const setModifierValue = function() {
+			getAttrs(["AskModifier"], function(v) {
+				let s = v["AskModifier"] == "0" ? "0" : "?{" + getTranslationByKey("Modifier") + "?|0}";
+				setAttrs({modifier: s});
+			});
+		};
+
+		////////////////////////////////////////////////////////////////////////////
 		// * Version
 		////////////////////////////////////////////////////////////////////////////
 
 		const checkVersion = function() {
-			getAttrs(["version", "char_rank"], (v) => {
-				if (v["version"] === undefined) {
+			getAttrs(["version", "char_rank"], function(v) {
+				if (typeof v["version"] !== "number") {
 					console.info(Glob.name + " " + Glob.type + " Is Now Being Initialized..."); // DEBUG
 					setAttrs({"version" : 0.0}, {silent: true});
 					checkVersion();
@@ -3014,8 +2901,10 @@
 		////////////////////////////////////////////////////////////////////////////
 
 		return {
+			setModifierValue:setModifierValue,
 			checkVersion: checkVersion
 		};
+
 	})();
 
 	/* ======================================================================== */
@@ -3140,21 +3029,19 @@
 	});
 
 	// Ask Modifier
-	on("change:AskModifier", function(e) {
-		let s = e.newValue == "0" ? "" : "?{" + getTranslationByKey("Modifier") + "?|0}+";
-		setAttrs({modifier: s});
+	on("change:AskModifier", function() {
+		wfrp4.setModifierValue();
 	});
 
 	// Whisper to GM
 	on("change:WhisperToGM", function(e) {
-		let s = e.newValue == "0" ? "" : "/w gm ";
-		setAttrs({whisper: s});
+		setAttrs({whisper: (e.newValue == "0" ? "" : "/w gm ")});
 	});
 
 	// Open Sheet
 	on("sheet:opened", function() {
+		wfrp4.setModifierValue();
 		wfrp4.checkVersion();
-		// checkTranslation
 	});
 
 </script>

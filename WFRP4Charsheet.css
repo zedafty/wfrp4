@@ -56,11 +56,9 @@ div {
 	background-size: 100%;
 	box-sizing: border-box;
 }
-
 .charsheet > div {
 	position: relative;
 }
-
 .sheet-logo {
 	margin-bottom: 20px;
 }
@@ -69,7 +67,6 @@ div {
 }
 .sheet-footer {
 	height: 20px;
-
 }
 .sheet-version {
 	float: right;
@@ -99,6 +96,27 @@ div {
 
 /* ========================================================================== */
 /* -------------------------------------------------------------------------- */
+/* # Selection */
+/* -------------------------------------------------------------------------- */
+/* ========================================================================== */
+
+i::selection,
+h4::selection,
+td::selection,
+div::selection,
+span::selection,
+table::selection,
+label::selection,
+input::selection,
+select::selection,
+textarea::selection {
+	color: #000;
+	background-color: #fc3;
+	text-shadow: none;
+}
+
+/* ========================================================================== */
+/* -------------------------------------------------------------------------- */
 /* # Mouse Cursors */
 /* -------------------------------------------------------------------------- */
 /* ========================================================================== */
@@ -121,6 +139,7 @@ button:hover,
 input[type=checkbox]:hover,
 label.sheet-tab,
 input.sheet-tab,
+.sheet-has-title:hover,
 .sheet-wrapper select:hover,
 .sheet-wrapper button[type="roll"]:hover {
 	cursor: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/cursor-focus.png") 11 11, auto;
@@ -206,6 +225,9 @@ input[type="checkbox"].sheet-toggle:focus + span + label {
 	padding: 4px;
 	background-color: #a39a8c88;
 }
+.sheet-wrapper .sheet-row.sheet-headline input {
+	background-color: #ffe3;
+}
 .sheet-wrapper .sheet-table,
 .sheet-wrapper .sheet-row > div:not(.sheet-desc) {
 	display: inline-block;
@@ -225,6 +247,14 @@ input[type="checkbox"].sheet-toggle:focus + span + label {
 /* -------------------------------------------------------------------------- */
 /* ========================================================================== */
 
+.sheet-wrapper h4 {
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: inherit;
+	text-transform: uppercase;
+	text-align: center;
+}
 .sheet-wrapper .sheet-table-header {
 	line-height: 24px;
 }
@@ -235,13 +265,8 @@ input[type="checkbox"].sheet-toggle:focus + span + label {
 	background-color: #2f3338;
 	background: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/background-dark.jpg");
 }
-.sheet-wrapper h4 {
-	font-size: 14px;
-	font-weight: bold;
-	font-family: inherit;
-	text-transform: uppercase;
-	text-align: center;
-	color: #333;
+.sheet-wrapper .sheet-table-wrapper h4 {
+	margin-bottom: 0;
 }
 
 /* ========================================================================== */
@@ -321,6 +346,11 @@ input[type="checkbox"].sheet-toggle:focus + span + label {
 	height: 13px;
 	width: 13px;
 }
+.sheet-wrapper textarea::placeholder,
+.sheet-wrapper input[type="text"]::placeholder {
+	color: #543;
+	opacity: .625;
+}
 .sheet-wrapper textarea:hover,
 .sheet-wrapper textarea:focus,
 .sheet-wrapper input[type="text"]:hover,
@@ -354,11 +384,13 @@ input[type="checkbox"].sheet-toggle:focus + span + label {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	text-align-last: center;
 	border: 3px solid transparent;
 	border-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/border-header-box.jpg");
 	border-image-slice: 3;
 	background-color: #a39a8c;
 	appearance: none;
+	-webkit-appearance: none;
 }
 .sheet-wrapper select:hover,
 .sheet-wrapper select:focus {
@@ -450,7 +482,8 @@ input[type="checkbox"]:focus + span {
 	border: 0;
 	border-radius: 4px;
 	background-color: transparent;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-box-back.jpg");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-back.png");
+	background-size: auto 24px;
 	background-repeat: repeat-x;
 	box-shadow: none;
 	user-select: none;
@@ -463,15 +496,16 @@ input[type="checkbox"]:focus + span {
 	width: 10px;
 	height: 24px;
 	top: 0;
+	background-size: 10px 24px;
 	background-repeat: no-repeat;
 }
 .sheet-wrapper button[type="roll"]::before {
 	left: 0;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-box-left.jpg");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-left.png");
 }
 .sheet-wrapper button[type="roll"]::after {
 	right: 0;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-box-right.jpg");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-right.png");
 }
 .sheet-wrapper button[type="roll"] span {
 	position: absolute;
@@ -848,9 +882,11 @@ div.sheet-desc textarea {
 	height: 50px;
 	font-size: 24px;
 	border: 1px solid #0004;
+	background-color: rgba(255,240,224,.1875) !important;
 }
 .sheet-shield input[type="number"] {
 	border: 0;
+	background-color: transparent !important;
 }
 .sheet-head {top: 5px; left: 115px;}
 .sheet-body {top: 110px; left: 115px;}
@@ -865,6 +901,18 @@ div.sheet-desc textarea {
 	background-size: 50px;
 	background-repeat: no-repeat;
 	background-position: center 2px;
+}
+
+/* ========================================================================== */
+/* -------------------------------------------------------------------------- */
+/* # Colors */
+/* -------------------------------------------------------------------------- */
+/* ========================================================================== */
+
+h4,
+label {
+	color: #332;
+	opacity: .875;
 }
 
 /* ========================================================================== */
@@ -968,9 +1016,11 @@ input.sheet-tabExperience:checked ~ div.sheet-tabExperience {
 /* -------------------------------------------------------------------------- */
 /* ========================================================================== */
 
+.sheet-rolltemplate-wfrp4 {
+	position: relative;
+	left: -20px;
+}
 .sheet-rolltemplate-wfrp4 table {
-	min-width: 220px;
-	max-width: 220px;
 	width: 100%;
 	padding: 5px;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
@@ -980,63 +1030,77 @@ input.sheet-tabExperience:checked ~ div.sheet-tabExperience {
 	border-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/border-large-box.jpg") 10 round;
 	border-image-width: 10px;
 	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/background-dark.jpg");
+	box-sizing: border-box;
 }
-
 .sheet-rolltemplate-wfrp4 table a {
 	color: #ffcc99;
 }
-
-.sheet-rolltemplate-wfrp4 th {
-	width: 100%;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	border: 0 solid;
-}
-
 .sheet-rolltemplate-wfrp4 .userscript-tcat {
 	color: #000;
 }
-
-.sheet-rolltemplate-wfrp4 td {
-	padding: 1px;
-}
-
-.sheet-rolltemplate-wfrp4 hr {
-	padding: 1px;
-}
-
-.sheet-rolltemplate-wfrp4 div {
-	padding: 1px;
-}
-
-.sheet-rolltemplate-wfrp4 .inlinerollresult {
-	display: inline-block;
-	min-width: 1.5em;
-	text-align: center;
-	border: 2px solid #483c3e;
-	background-color: #000;
-}
-
-.sheet-rolltemplate-wfrp4 .inlinerollresult.fullcrit {
-	border: 2px solid #3fb315;
-}
-
-.sheet-rolltemplate-wfrp4 .inlinerollresult.fullfail {
-	border: 2px solid #b31515;
-}
-
-.sheet-rolltemplate-wfrp4 .inlinerollresult.importantroll {
-	border: 2px solid #4a57ed;
-}
-
 .sheet-rolltemplate-wfrp4 .sheet-rollcharacter {
 	line-height: 1em;
 	font-size: 1.5em;
 	color: #fff;
 }
-
 .sheet-rolltemplate-wfrp4 .sheet-rolltitle {
 	line-height: 1.2em;
-	font-size: 1.25em;
+	font-size: 1.1875em;
+	font-style: italic;
+}
+.sheet-rolltemplate-wfrp4 .inlinerollresult,
+.sheet-rolltemplate-wfrp4 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-wfrp4 .inlinerollresult.fullfail,
+.sheet-rolltemplate-wfrp4 .inlinerollresult.importantroll {
+	display: inline;
+	min-width: auto;
+	padding: 0;
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;
+	color: inherit;
+	border: 0;
+	background-color: transparent;
+}
+.sheet-rolltemplate-wfrp4 .sheet-roll-result .inlinerollresult {
+	display: inline-block;
+	min-width: 1.5em;
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid #433;
+	background-color: #000;
+}
+.sheet-rolltemplate-wfrp4 .sheet-roll-result .inlinerollresult.fullcrit {
+	border-color: #3b1;
+}
+.sheet-rolltemplate-wfrp4 .sheet-roll-result .inlinerollresult.fullfail,
+.sheet-rolltemplate-wfrp4 .sheet-critical-failure ~ .sheet-roll-result .inlinerollresult.fullcrit {
+	border-color: #c32;
+}
+.sheet-rolltemplate-wfrp4 .sheet-roll-result .inlinerollresult.importantroll {
+	border-color: #433;
+}
+.sheet-rolltemplate-wfrp4 .sheet-label {
+	font-weight: bold;
+}
+.sheet-rolltemplate-wfrp4 .sheet-label::after {
+	content: ":";
+}
+.sheet-rolltemplate-wfrp4 .sheet-small {
+	font-size: .875em;
+}
+.sheet-rolltemplate-wfrp4 .sheet-positive {
+	color: #3a2;
+}
+.sheet-rolltemplate-wfrp4 .sheet-negative {
+	color: #c61;
+}
+.sheet-rolltemplate-wfrp4 .sheet-dice-result {
+	margin-top: .25em;
+	margin-bottom: .5em;
+}
+.sheet-rolltemplate-wfrp4 .sheet-description {
+	margin-top: .5em;
 	font-style: italic;
 }
 
