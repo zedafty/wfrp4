@@ -482,7 +482,7 @@ input[type="checkbox"]:focus + span {
 	border: 0;
 	border-radius: 4px;
 	background-color: transparent;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-back.png");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-box.jpg");
 	background-size: auto 24px;
 	background-repeat: repeat-x;
 	box-shadow: none;
@@ -501,11 +501,13 @@ input[type="checkbox"]:focus + span {
 }
 .sheet-wrapper button[type="roll"]::before {
 	left: 0;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-left.png");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-boxl.jpg");
+	background-size: 10px 24px;
 }
 .sheet-wrapper button[type="roll"]::after {
 	right: 0;
-	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-right.png");
+	background-image: url("https://raw.githubusercontent.com/zedafty/wfrp4/master/images/button-boxr.jpg");
+	background-size: 10px 24px;
 }
 .sheet-wrapper button[type="roll"] span {
 	position: absolute;
